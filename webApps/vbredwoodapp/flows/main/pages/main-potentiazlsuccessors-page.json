@@ -1,0 +1,188 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "candidate1": {
+      "type": "any",
+      "defaultValue": "0"
+    },
+    "candidate2": {
+      "type": "any",
+      "defaultValue": "0"
+    },
+    "candidate3": {
+      "type": "any",
+      "defaultValue": "0"
+    },
+    "candidate4": {
+      "type": "any",
+      "defaultValue": "0"
+    },
+    "candidate5": {
+      "type": "any",
+      "defaultValue": "0"
+    },
+    "candidatesForSuccessorsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_candidatesForSuccessors",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallCandidatesForSuccessorsResponse",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "jobName",
+          "value": "{{ $variables.CurrentJob }}"
+        }
+      }
+    },
+    "CurrentJob": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "currentJobID": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "IncumbentPersonNumber": {
+      "type": "any",
+      "input": "fromUrl"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallCandidatesForSuccessorsResponse": {
+      "endpoint": "getall_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getallCandidatesForSuccessorsResponse": {
+      "items": [
+        {
+          "aSSETID": "number",
+          "aSSETNAME": "string",
+          "bUSINESSIMPACT": "string",
+          "bUSINESSUNIT": "string",
+          "cOMPETENCYID": "number",
+          "cOMPETENCYNAME": "string",
+          "cOMPETENCYTYPE": "string",
+          "cOUNTRY": "string",
+          "cOURSENAME": "string",
+          "createdBy": "string",
+          "creationDate": "string",
+          "cRITICALTORETAIN": "string",
+          "dateOfBirth": "string",
+          "dateOfJoining": "string",
+          "dEPARTMENT": "string",
+          "dOCUMENTNAME": "string",
+          "effectiveEndDate": "string",
+          "effectiveStartDate": "string",
+          "eMAILADDR": "string",
+          "employeeFullName": "string",
+          "eMPLOYEENUMBER": "number",
+          "eMPLOYMENTTYPE": "string",
+          "eNDDATE": "string",
+          "eQUALIZED": "string",
+          "fINALSTATUS": "string",
+          "fLIGHTRISKS": "string",
+          "gender": "string",
+          "gradeName": "string",
+          "id": "number",
+          "jobID": "number",
+          "jobName": "string",
+          "lastUpdateDate": "string",
+          "lastUpdatedBy": "string",
+          "lOCATIONNAME": "string",
+          "lOCATIONNAME2": "string",
+          "mAPPEDPROFICIENCYLEVEL": "string",
+          "mGRFINALOUTCOME": "string",
+          "nationality": "string",
+          "oUTCOMETYPE": "string",
+          "photo": "string",
+          "pLANNAME": "string",
+          "pLATFORMNAME": "string",
+          "pROMOTIONELIGIBILITY": "string",
+          "rATING": "number",
+          "rEASONFORFLIGHTRISK": "string",
+          "rETENTIONCONSIDERATIONS": "string",
+          "sTARTDATE": "string",
+          "sUPERVISOREMPNO": "string",
+          "sUPERVISORNAME": "string",
+          "tALENTMAPPOSITION": "string",
+          "tALENTYEAR": "number",
+          "tARGETPROFICIENCYLEVEL": "string",
+          "tARGETYEAR": "number",
+          "tITLE": "string",
+          "tITLESTD": "string",
+          "tRAININGHOURS": "string",
+          "TrainingTtYPE": "string",
+          "uAENonUAE": "string",
+          "uNIVERSITY": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "listViewSelected": {
+      "chains": [
+        {
+          "chain": "ListViewSelectedChangeChain",
+          "parameters": {
+            "keys": "{{ Array.from($event.detail.value.values()) }}"
+          }
+        }
+      ]
+    },
+    "smartSearchPageTemplateSpGoToParent": {
+      "chains": [
+        {
+          "chain": "SmartSearchPageTemplateSpGoToParentChain"
+        }
+      ]
+    },
+    "smartSearchPageTemplateSpPrimaryAction": {
+      "chains": [
+        {
+          "chain": "SmartSearchPageTemplateSpPrimaryActionChain"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-accordion": {
+        "path": "ojs/ojaccordion"
+      },
+      "oj-collapsible": {
+        "path": "ojs/ojcollapsible"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-sp-bottom-drawer-template": {
+        "path": "oj-sp/bottom-drawer-template/loader"
+      },
+      "oj-sp-profile-card": {
+        "path": "oj-sp/profile-card/loader"
+      },
+      "oj-sp-smart-search-page": {
+        "path": "oj-sp/smart-search-page/loader"
+      }
+
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-61-icoSmartSearchPage48Svg"
+  }
+}

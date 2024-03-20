@@ -1,0 +1,374 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v01",
+        "title": "SP_CREATEPLAN",
+        "x-vb": {
+            "serviceType": "ics"
+        }
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/ics/ic/api/integration/v1/flows/rest"
+        }
+    ],
+    "paths": {
+        "/SP_CREATEPLAN/1.0/": {
+            "post": {
+                "tags": [
+                    "SP_PKG/SP_CREATEPLAN|01.00.0000",
+                    "SP_PKG"
+                ],
+                "operationId": "postSP_CREATEPLAN1_0",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostSP_CREATEPLAN1_0Request"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "summary": "Example stored by VB User",
+                                    "externalValue": "./examples/postSP_CREATEPLAN1_0/request_application_json_vb.json"
+                                }
+                            }
+                        }
+                    },
+                    "required": false
+                },
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/response-wrapper"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ]
+            }
+        },
+        "/CHECKPLANPROCESSSTATUS/1.0/": {
+            "get": {
+                "tags": [
+                    "SP_PKG/CHECKPLANPROCESSSTATUS|01.00.0000",
+                    "SP_PKG"
+                ],
+                "operationId": "getCHECKPLANPROCESSSTATUS1_0",
+                "parameters": [
+                    {
+                        "name": "processId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError-1"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCHECKPLANPROCESSSTATUS1_0"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getCHECKPLANPROCESSSTATUS1_0/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "request-wrapper": {
+                "type": "object",
+                "required": [
+                    "IncumbentPersonNumber",
+                    "OwnerTypeCode",
+                    "PlanOwnerPersonNumber",
+                    "planName",
+                    "successors"
+                ],
+                "properties": {
+                    "planName": {
+                        "type": "string"
+                    },
+                    "IncumbentPersonNumber": {
+                        "type": "string"
+                    },
+                    "successors": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "PlanCandidatePersonNumber": {
+                                    "type": "string"
+                                },
+                                "CandidateReadiness": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "CandidateReadiness",
+                                "PlanCandidatePersonNumber"
+                            ]
+                        },
+                        "minItems": 1
+                    },
+                    "OwnerTypeCode": {
+                        "type": "string"
+                    },
+                    "PlanOwnerPersonNumber": {
+                        "type": "string"
+                    }
+                }
+            },
+            "APIInvocationError": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper": {
+                "type": "object",
+                "required": [
+                    "status"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PostSP_CREATEPLAN1_0Request": {
+                "type": "object",
+                "properties": {
+                    "IncumbentPersonNumber": {
+                        "type": "string"
+                    },
+                    "PlanOwnerPersonNumber": {
+                        "type": "string"
+                    },
+                    "OwnerTypeCode": {
+                        "type": "string"
+                    },
+                    "successors": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "CandidateReadiness": {
+                                    "type": "string"
+                                },
+                                "PlanCandidatePersonNumber": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "planName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "APIInvocationError-1": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper-1": {
+                "type": "object",
+                "required": [
+                    "contentCount",
+                    "errorCode",
+                    "errorMsg",
+                    "processId",
+                    "status"
+                ],
+                "properties": {
+                    "processId": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "contentCount": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorMsg": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetCHECKPLANPROCESSSTATUS1_0": {
+                "type": "object",
+                "properties": {
+                    "processId": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "contentCount": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorMsg": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+{
+    "displayLabel": "EmployeeTraining",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "eb2b56c4-9909-45e6-a57a-059e49cf549b",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "f5bf5c50-7877-41e7-9bb6-33c8479ef9b4",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "a56c57ca-1957-49c4-b00a-f8186167d5c3",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "72497f4f-efbf-4435-b45e-27423b78f30f",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "912a116b-157b-49c4-b3f7-650434289d6f",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "dc35221a-2082-4d3c-984a-d126fb1d2a16",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMPLOYEE_NUMBER",
+            "name": "eMPLOYEENUMBER",
+            "oid": "8d3f6e7e-ba1a-4802-b1d7-4ab4b5153cb1",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "FULL_NAME",
+            "name": "fULLNAME",
+            "oid": "a521247a-c6c9-427c-9d48-bb5c45cedb95",
+            "type": "string"
+        },
+        {
+            "displayLabel": "COURSE_NAME",
+            "name": "cOURSENAME",
+            "oid": "a443daad-89f5-48c6-8349-f9dce9c37f72",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "TRAINING_TYPE",
+            "name": "tRAININGTYPE",
+            "oid": "c11bfb41-f28a-44fa-b557-789c8223c9a1",
+            "type": "string"
+        },
+        {
+            "displayLabel": "START_DATE",
+            "name": "sTARTDATE",
+            "oid": "b9b39246-6840-446d-99bf-99bfc3d9181f",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "END_DATE",
+            "name": "eNDDATE",
+            "oid": "29ed441f-1bc2-4231-acfd-a79e2745e203",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "TRAINING_HOURS",
+            "name": "tRAININGHOURS",
+            "oid": "bc5b3815-9407-4d95-8481-26c33fc886a2",
+            "required": false,
+            "scale": 1,
+            "type": "number"
+        }
+    ],
+    "hidden": false,
+    "name": "EmployeeTraining",
+    "oid": "2c84555a-7bcd-4587-bdf9-4b739f972087",
+    "relationships": [
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

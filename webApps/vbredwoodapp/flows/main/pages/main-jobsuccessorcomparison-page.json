@@ -1,0 +1,765 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "animate": {
+      "type": "string",
+      "defaultValue": "auto"
+    },
+    "bidirectionalNavigation": {
+      "type": "boolean",
+      "defaultValue": true,
+      "input": "fromCaller"
+    },
+    "candidateEmployeeNbr1": {
+      "type": "any",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "loadCandidatesForSuccessorsChain",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr1 }}"
+            }
+          },
+{
+            "chain": "loadCandidatesForSuccessorsChain2",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr1 }}"
+            }
+          },
+          {
+            "chain": "loadCandidatesForSuccessorsChain5",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr1 }}"
+            }
+          }
+        ]
+      },
+      "input": "fromUrl"
+    },
+    "candidateEmployeeNbr2": {
+      "type": "any",
+      "input": "fromUrl",
+      "onValueChanged": {
+        "chains": [
+{
+            "chain": "loadCandidatesForSuccessorsChain3",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr2 }}"
+            }
+          },
+          {
+            "chain": "loadCandidatesForSuccessorsChain4",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr2 }}"
+            }
+          }
+        ]
+      }
+    },
+    "candidateEmployeeNbr3": {
+      "type": "any",
+      "input": "fromUrl",
+      "onValueChanged": {
+        "chains": [
+{
+            "chain": "loadCandidatesForSuccessorsChain6",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr3 }}"
+            }
+          },
+          {
+            "chain": "loadCandidatesForSuccessorsChain8",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr3 }}"
+            }
+          }
+        ]
+      }
+    },
+    "candidateEmployeeNbr4": {
+      "type": "any",
+      "input": "fromUrl",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "loadCandidatesForSuccessorsChain9",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr4 }}"
+            }
+          }
+        ]
+      }
+    },
+    "candidateEmployeeNbr5": {
+      "type": "any",
+      "input": "fromUrl",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "loadCandidatesForSuccessorsChain7",
+            "parameters": {
+              "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr5 }}"
+            }
+          }
+        ]
+      }
+    },
+    "candidatesForSuccessors": {
+      "type": "getCandidatesForSuccessorsResponse"
+    },
+    "candidatesForSuccessors2": {
+      "type": "getCandidatesForSuccessorsResponse2"
+    },
+    "candidatesForSuccessors3": {
+      "type": "getCandidatesForSuccessorsResponse3"
+    },
+    "candidatesForSuccessors4": {
+      "type": "getCandidatesForSuccessorsResponse4"
+    },
+    "candidatesForSuccessors5": {
+      "type": "getCandidatesForSuccessorsResponse5"
+    },
+    "candidatesForSuccessors6": {
+      "type": "getCandidatesForSuccessorsResponse6"
+    },
+    "candidatesForSuccessors7": {
+      "type": "getCandidatesForSuccessorsResponse7"
+    },
+    "candidatesForSuccessors8": {
+      "type": "getCandidatesForSuccessorsResponse8"
+    },
+    "candidatesForSuccessors9": {
+      "type": "getCandidatesForSuccessorsResponse9"
+    },
+    "configureSuccessorPlan": {
+      "type": "setSuccessorPlanData"
+    },
+    "displayMode": {
+      "type": "string"
+    },
+    "goToParent": {
+      "type": "boolean",
+      "defaultValue": true,
+      "input": "fromCaller"
+    },
+    "IncumbentPersonNumber": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "jobDefinition": {
+      "type": "getJobDefinitionResponse"
+    },
+    "jobDefinition2": {
+      "type": "getJobDefinitionResponse2"
+    },
+    "jobDescription": {
+      "type": "getJobDescriptionResponse"
+    },
+    "jobID4Succession": {
+      "type": "any",
+      "input": "none"
+    },
+    "nextStep": {
+      "type": "any",
+      "defaultValue": {}
+    },
+    "pageTitle": {
+      "type": "string",
+      "defaultValue": "Compare Successors"
+    },
+    "panelFifthTitle": {
+      "defaultValue": "Proposed Successor : ",
+      "type": "string"
+    },
+    "panelForthTitle": {
+      "defaultValue": "Proposed Successor : ",
+      "type": "string"
+    },
+    "panelOneTitle": {
+      "type": "string",
+      "defaultValue": "Job Description"
+    },
+    "panelThreeTitle": {
+      "defaultValue": "Proposed Successor : ",
+      "type": "string"
+    },
+    "panelTwoTitle": {
+      "type": "string",
+      "defaultValue": "Proposed Successor : "
+    },
+    "parentPage": {
+      "type": "string",
+      "input": "fromCaller"
+    },
+    "previousStep": {
+      "type": "any"
+    },
+    "rowIndex": {
+      "type": "number",
+      "input": "fromUrl",
+      "description": "Zero-based index referring to the current row",
+      "onValueChanged": {
+        "chains": [
+{
+            "chainId": "fetchChain",
+            "parameters": {
+              "limit": 3,
+              "offset": "{{ $page.variables.rowIndex > 0 ? ($page.variables.rowIndex - 1) : 0 }}"
+            }
+          },
+          {
+            "chain": "loadJobDescriptionChain",
+            "parameters": {
+              "jobDescriptionId": "{{ $variables.rowIndex }}"
+            }
+          }          ,
+          {
+            "chain": "loadSuccessorsMappingChain",
+            "parameters": {
+              "successorsMappingId": "{{ $variables.rowIndex }}"
+            }
+          }          ,
+{
+            "chain": "loadSuccessorsMappingChain2",
+            "parameters": {
+              "successorsMappingId": "{{ $variables.rowIndex }}"
+            }
+          },
+{
+            "chain": "loadSuccessorsMappingChain3",
+            "parameters": {
+              "successorsMappingId": "{{ $variables.rowIndex }}"
+            }
+          },
+{
+            "chain": "loadJobDefinitionChain",
+            "parameters": {
+              "jobDefinitionId": "{{ $variables.rowIndex }}"
+            }
+          },
+          {
+            "chain": "loadJobDefinitionChain2",
+            "parameters": {
+              "jobDefinitionId": "{{ $variables.rowIndex }}"
+            }
+          }
+        ]
+      }
+    },
+    "selectButtonLabel1": {
+      "type": "string",
+      "defaultValue": "Select"
+    },
+    "selectButtonLabel2": {
+      "defaultValue": "Select",
+      "type": "string"
+    },
+    "selectButtonLabel3": {
+      "defaultValue": "Select",
+      "type": "string"
+    },
+    "selectButtonLabel4": {
+      "defaultValue": "Select",
+      "type": "string"
+    },
+    "selectButtonLabel5": {
+      "defaultValue": "Select",
+      "type": "string"
+    },
+    "selectedCandidate1": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "selectedCandidate2": {
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    "selectedCandidate3": {
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    "selectedCandidate4": {
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    "selectedCandidate5": {
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    "selectedPanel": {
+      "type": "number",
+      "input": "fromUrl"
+    },
+    "successorsMapping": {
+      "type": "getSuccessorsMappingResponse"
+    },
+    "successorsMapping2": {
+      "type": "getSuccessorsMappingResponse2"
+    },
+    "successorsMapping3": {
+      "type": "getSuccessorsMappingResponse3"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.get_AllJobDetails": {
+      "endpoint": "get_JobDefinition",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse2": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse3": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse4": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse5": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse6": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse7": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse8": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCandidatesForSuccessorsResponse9": {
+      "endpoint": "get_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getJobDefinitionResponse": {
+      "endpoint": "get_JobDefinition",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getJobDefinitionResponse2": {
+      "endpoint": "get_JobDefinition",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getJobDescriptionResponse": {
+      "endpoint": "get_JobDescription",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getSuccessorsMappingResponse": {
+      "endpoint": "get_successorsMapping",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getSuccessorsMappingResponse2": {
+      "endpoint": "get_successorsMapping",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getSuccessorsMappingResponse3": {
+      "endpoint": "get_successorsMapping",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.setSuccessorPlanData": {
+      "endpoint": "postSP_CREATEPLAN1_0",
+      "service": "createSuccessorPlan",
+      "path": "request"
+    },
+    "get_AllJobDetails": {
+      "createdBy": "string",
+      "creationDate": "string",
+      "dEPARTMENT": "string",
+      "fUNCTIONALTITLE": "string",
+      "gRADE": "string",
+      "id": "number",
+      "jOBCODE": "string",
+      "jOBPURPOSE": "string",
+      "lastUpdateDate": "string",
+      "lastUpdatedBy": "string",
+      "pLATFORM": "string",
+      "rEPORTINGTO": "string",
+      "uniqueJobID": "number",
+      "uniqueJOBTITLE": "string",
+      "uNIT": "string"
+    },
+    "getCandidatesForSuccessorsResponse": {
+      "bUSINESSIMPACT": "string",
+      "dateOfJoining": "string",
+      "employeeFullName": "string",
+      "eMPLOYEENUMBER": "number",
+      "eMPLOYMENTTYPE": "string",
+      "gradeName": "string",
+      "photo": "string",
+      "pLATFORMNAME": "string",
+      "rATING": "number",
+      "sUPERVISOREMPNO": "string",
+      "sUPERVISORNAME": "string"
+    },
+    "getCandidatesForSuccessorsResponse2": {
+      "employeeFullName": "string",
+      "jobName": "string",
+      "photo": "string",
+      "pROMOTIONELIGIBILITY": "string"
+    },
+    "getCandidatesForSuccessorsResponse3": {
+      "bUSINESSIMPACT": "string",
+      "dateOfJoining": "string",
+      "employeeFullName": "string",
+      "eMPLOYEENUMBER": "number",
+      "eMPLOYMENTTYPE": "string",
+      "gradeName": "string",
+      "pLATFORMNAME": "string",
+      "rATING": "number",
+      "sUPERVISORNAME": "string"
+    },
+    "getCandidatesForSuccessorsResponse4": {
+      "eMPLOYEENUMBER": "number",
+      "jobName": "string",
+      "photo": "string"
+
+    },
+    "getCandidatesForSuccessorsResponse5": {
+      "eMPLOYEENUMBER": "number",
+      "jobName": "string",
+      "photo": "string"
+
+    },
+    "getCandidatesForSuccessorsResponse6": {
+      "eMPLOYEENUMBER": "number",
+      "jobName": "string",
+      "photo": "string"
+
+    },
+    "getCandidatesForSuccessorsResponse7": {
+      "eMPLOYEENUMBER": "number",
+      "jobName": "string",
+      "photo": "string"
+
+    },
+    "getCandidatesForSuccessorsResponse8": {
+      "bUSINESSIMPACT": "string",
+      "dateOfJoining": "string",
+      "employeeFullName": "string",
+      "eMPLOYEENUMBER": "number",
+      "eMPLOYMENTTYPE": "string",
+      "gradeName": "string",
+      "pLATFORMNAME": "string",
+      "rATING": "number",
+      "sUPERVISORNAME": "string"
+    },
+    "getCandidatesForSuccessorsResponse9": {
+      "bUSINESSIMPACT": "string",
+      "dateOfJoining": "string",
+      "employeeFullName": "string",
+      "eMPLOYEENUMBER": "number",
+      "eMPLOYMENTTYPE": "string",
+      "gradeName": "string",
+      "pLATFORMNAME": "string",
+      "rATING": "number",
+      "sUPERVISORNAME": "string"
+    },
+    "getJobDefinitionResponse": {
+      "dEPARTMENT": "string",
+      "fUNCTIONALTITLE": "string",
+      "gRADE": "string",
+      "jOBCODE": "string",
+      "jOBPURPOSE": "string",
+      "pLATFORM": "string",
+      "rEPORTINGTO": "string",
+      "uniqueJOBTITLE": "string",
+      "uNIT": "string"
+    },
+    "getJobDefinitionResponse2": {
+      "dEPARTMENT": "string",
+      "fUNCTIONALTITLE": "string",
+      "gRADE": "string",
+      "jOBCODE": "string",
+      "jOBPURPOSE": "string",
+      "lastUpdateDate": "string",
+      "lastUpdatedBy": "string",
+      "pLATFORM": "string",
+      "rEPORTINGTO": "string",
+      "uniqueJobID": "number",
+      "uniqueJOBTITLE": "string",
+      "uNIT": "string"
+    },
+    "getJobDescriptionResponse": {
+      "dEPARTMENT": "string",
+      "eXPERIENCE": "string",
+      "fUNCTIONALTITLE": "string",
+      "gRADE": "string",
+      "jOBCODE": "string",
+      "jOBPURPOSE": "string",
+      "jOBTITLE": "string",
+      "pLATFORM": "string",
+      "uNIT": "string"
+    },
+    "getSuccessorsMappingResponse": {
+      "dEPARTMENT": "string",
+      "gRADE": "number",
+      "gradeName": "string",
+      "jOBCODE": "string",
+      "jobName": "string",
+      "jOBPURPOSE": "string",
+      "jOBTITLE": "string",
+      "pLATFORM": "string",
+      "uNIT": "string"
+    },
+    "getSuccessorsMappingResponse2": {
+      "eXPERIENCE": "string",
+      "jOBPURPOSE": "string",
+      "mANDATORYKNOWLEDGE": "string",
+      "mANDATORYSKILLS": "string",
+      "oPTIONALKNOWLEDGE": "string",
+      "oPTIONALSKILLS": "string",
+      "qUALIFICATION": "string"
+    },
+    "getSuccessorsMappingResponse3": {
+      "dateOfBirth": "string",
+      "dateOfJoining": "string",
+      "employeeFullName": "string",
+      "eMPLOYMENTTYPE": "string",
+      "gradeName": "string",
+      "lOCATIONNAME": "string",
+      "pLATFORMNAME": "string"
+    },
+    "setSuccessorPlanData": {
+      "IncumbentPersonNumber": "string",
+      "successors": [
+        {
+          "CandidateReadiness": "string",
+          "PlanCandidatePersonNumber": "string"
+        }
+      ]
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1"
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2"
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain3"
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain4"
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "IconClickChain"
+        }
+      ]
+    },
+    "onSpGoToParent": {
+      "chains": [
+        {
+          "chainId": "goToParentChain",
+          "parameters": {
+            "parentPage": "{{ $page.variables.parentPage }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+{
+          "chainId": "firePageLayoutEventChain"
+        },
+        {
+          "chain": "loadJobDescriptionChain",
+          "parameters": {
+            "jobDescriptionId": "{{ $variables.rowIndex }}"
+          }
+        }        ,
+        {
+          "chain": "loadSuccessorsMappingChain",
+          "parameters": {
+            "successorsMappingId": "{{ $variables.candidateEmployeeNbr1 }}"
+          }
+        }        ,
+{
+          "chain": "loadSuccessorsMappingChain2",
+          "parameters": {
+            "successorsMappingId": "{{ $variables.candidateEmployeeNbr1 }}"
+          }
+        },
+{
+          "chain": "loadSuccessorsMappingChain3",
+          "parameters": {
+            "successorsMappingId": "{{ $variables.candidateEmployeeNbr2 }}"
+          }
+        },
+{
+          "chain": "loadJobDefinitionChain",
+          "parameters": {
+            "jobDefinitionId": "{{ $variables.rowIndex }}"
+          }
+        },
+{
+          "chain": "loadJobDefinitionChain2",
+          "parameters": {
+            "jobDefinitionId": "{{ $variables.rowIndex }}"
+          }
+        },
+        {
+          "chain": "loadCandidatesForSuccessorsChain",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr1 }}"
+          }
+        }        ,
+{
+          "chain": "loadCandidatesForSuccessorsChain2",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr1 }}"
+          }
+        },
+        {
+          "chain": "loadCandidatesForSuccessorsChain3",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr2 }}"
+          }
+        },
+        {
+          "chain": "loadCandidatesForSuccessorsChain4",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr2 }}"
+          }
+        }        ,
+        {
+          "chain": "loadCandidatesForSuccessorsChain5",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr1 }}"
+          }
+        }        ,
+{
+          "chain": "loadCandidatesForSuccessorsChain6",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr3 }}"
+          }
+        },
+        {
+          "chain": "loadCandidatesForSuccessorsChain7",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr5 }}"
+          }
+        }        ,
+        {
+          "chain": "loadCandidatesForSuccessorsChain8",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr3 }}"
+          }
+        }        ,
+        {
+          "chain": "loadCandidatesForSuccessorsChain9",
+          "parameters": {
+            "candidatesForSuccessorsId": "{{ $variables.candidateEmployeeNbr4 }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-highlight-text": {
+        "path": "ojs/ojhighlighttext"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-date-time": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-sp-foldout-layout": {
+        "path": "oj-sp/foldout-layout/loader"
+      },
+      "oj-sp-foldout-panel-summarizing": {
+        "path": "oj-sp/foldout-panel-summarizing/loader"
+      },
+      "oj-sp-horizontal-overview": {
+        "path": "oj-sp/horizontal-overview/loader"
+      }
+
+    },
+    "modules": {
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      },
+      "ojValidationNumber": {
+        "path": "ojs/ojvalidation-number"
+      }
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-66-icoFoldoutLayout48Svg"
+  }
+}

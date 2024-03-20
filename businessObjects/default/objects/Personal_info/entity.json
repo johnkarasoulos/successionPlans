@@ -1,0 +1,163 @@
+{
+    "displayLabel": "Personal_info",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "b275e778-b457-427f-aac7-447604936fcc",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "454b778e-b6af-43b1-af99-ea3e34973b44",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "0edce905-5839-4737-8aee-e677bdd03e2f",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "dd6c6d5a-f618-4dca-99fa-764104a4a176",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "2132bfe7-6340-4a78-a2e1-bb4bb4663a5d",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "877ebf58-2075-4e24-8b2b-8746fc6b1fc0",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMP_NAME",
+            "name": "eMPNAME",
+            "oid": "9f15ad16-79dd-4233-b6d3-ab0ec74dbc69",
+            "type": "string"
+        },
+        {
+            "displayLabel": "EMPLOYEE_NUMBER",
+            "name": "eMPLOYEENUMBER",
+            "oid": "e0e4e4ad-06ed-45a4-bb65-c56497cfaccd",
+            "type": "number"
+        },
+        {
+            "displayLabel": "Date of Joining",
+            "name": "dateOfJoining",
+            "oid": "254bc6c9-a7bc-4950-9666-5e5e3cc7731e",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Date of Birth",
+            "name": "dateOfBirth",
+            "oid": "a31d11ef-e77c-4edd-aa56-1bb1bcfb65f1",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Nationality",
+            "name": "nationality",
+            "oid": "ac289324-87e0-43f6-b340-bbeab87c16ae",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Gender",
+            "name": "gender",
+            "oid": "f90873f2-2e19-4303-aefc-08d44bd7b3cc",
+            "type": "string"
+        },
+        {
+            "displayLabel": "LOCATION_NAME",
+            "name": "lOCATIONNAME",
+            "oid": "9bc938f5-3151-4931-ae93-b6d38174230f",
+            "type": "string"
+        },
+        {
+            "displayLabel": "EMAIL_ADDR",
+            "name": "eMAILADDR",
+            "oid": "2078aa90-7be0-4f02-9a8b-25fb1f5351cb",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "UAE/Non-UAE",
+            "name": "uAENonUAE",
+            "oid": "b5d1fdf0-1564-425a-917a-89b537f5e1c5",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Photo",
+            "name": "photo",
+            "oid": "7884cd05-487e-42e7-aeb6-50188fa4ed08",
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "Personal_info",
+    "oid": "725da5f3-ca38-4100-8a90-24b990579498",
+    "relationships": [
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

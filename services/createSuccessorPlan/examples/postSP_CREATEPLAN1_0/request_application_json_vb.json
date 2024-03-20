@@ -1,0 +1,10 @@
+{
+  "IncumbentPersonNumber": "12571",
+  "PlanOwnerPersonNumber": "14786",
+  "OwnerTypeCode": "Administrator",
+  "successors": [{
+    "CandidateReadiness": "Ready in 2 Year (R2)",
+    "PlanCandidatePersonNumber": "14238"
+  }],
+  "planName": "TEST SP"
+}

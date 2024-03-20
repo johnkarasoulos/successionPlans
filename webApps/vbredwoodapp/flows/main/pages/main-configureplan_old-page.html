@@ -1,0 +1,65 @@
+<oj-sp-welcome-page id="oj-sp-wp1" background-color="[[ $page.variables.backgroundColor ]]"
+  illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Setup and Submit  Succession Plan" overline-text="Configuration"
+  description-text="Provide the readiness level for each successor" primary-action.label="Submit Succession Plan"
+  primary-action.icon="oj-ux-ico-video-create">
+  <oj-sp-collection-container functional-primary-action-group.label="Submit Plan">
+    <oj-toolbar id="oj-toolbar-for-oj-form-layout--1354937896-1" chroming="solid">
+      <oj-button disabled="[[ $variables.createSPPKGSPCREATEPLAN010000ChainInProgress ]]"
+        on-oj-action="[[$listeners.saveButtonClicked]]" chroming="solid" class="oj-button-sm">Submit Plan</oj-button>
+      <oj-button label="Cancel" class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+    </oj-toolbar>
+    <div class="oj-flex"
+      data-vb-layout-type="flex">
+    </div>
+    <oj-validation-group id="sPPKGSPCREATEPLAN010000-validation-group--1354937896-1">
+      <oj-form-layout id="oj-form-layout--1354937896-1" label-width="100" direction="column"
+        class="oj-formlayout-full-width" label-edge="start" colspan-wrap="wrap" user-assistance-density="compact">
+        <oj-input-text label-hint="Incumbent Person Number"
+          class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+          value="{{ $variables.IncumbentPersonNumber }}" disabled="true" readonly="true"></oj-input-text>
+        <oj-input-text label-hint="Incumbent name:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+          value="{{ $variables.IncumbentFullName }}" disabled="true" readonly="true"></oj-input-text>
+        <oj-input-text label-hint="Owner Type Code"
+          class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+          value="{{ $variables.OwnerTypeCode }}" readonly="true"></oj-input-text>
+        <oj-input-text label-hint="Owner of the plan person number:"
+          class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+          value="{{ $variables.PlanOwnerPersonNumber }}" readonly="true"></oj-input-text>
+        <oj-select-single label-hint="Owner of the plan:" data="[[$variables.personalInfoListSDP3]]" item-text="eMPNAME"
+          class="oj-form-control-text-align-start" user-assistance-density="compact" valid="valid"
+          on-value-item-changed="[[$listeners.selectValueItem2]]" value="{{ $variables.PlanOwnerPersonNumber }}"
+          label-edge="inside">
+          <template slot="itemTemplate">
+            <oj-input-text label-hint="Plan Owner Person Number"
+              class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-width-sm"
+              readonly="true" disabled="true"></oj-input-text>
+          </template>
+        </oj-select-single>
+        <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.workersInfo2ListSDP]]"
+          columns='[{"headerText":"Full name","field":"eMPNAME"},{"headerText":"Person Number","field":"eMPLOYEEID"},{"headerText":"Readiness Level","field":"Readiness","template":"Readiness"}]'
+          selection-mode.row="multiple" display="grid" horizontal-grid-visible="enabled"
+          vertical-grid-visible="enabled" class="" selection-mode.column="none">
+          <template slot="Readiness">
+            <oj-select-single label-hint="Readiness Level" data="[[$variables.readinessStatusListSDP2]]"
+              item-text="status"></oj-select-single>
+          </template>
+        </oj-table>
+      </oj-form-layout>
+    </oj-validation-group>
+  </oj-sp-collection-container>
+  <oj-input-text label-hint="Plan name: " slot="search" virtual-keyboard="text" class="oj-form-control-text-align-start"
+    clear-icon="always" autofocus="true" label-edge="inside" user-assistance-density="compact"
+    value="{{ $variables.PlanName }}"></oj-input-text>
+  <div class="oj-flex">
+    <oj-toolbar id="oj-toolbar--1354937896-1" chroming="solid" class="oj-flex-item oj-sm-12 oj-md-12">
+      <oj-button>Create Succession Planning</oj-button>
+      <oj-button>Edit Succession Planning</oj-button>
+    </oj-toolbar>
+  </div>
+
+</oj-sp-welcome-page>

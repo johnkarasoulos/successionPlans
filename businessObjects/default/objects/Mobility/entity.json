@@ -1,0 +1,153 @@
+{
+    "displayLabel": "Mobility",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "9c8f8fdf-095f-44ab-a21f-521b167394b2",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "c9808837-a360-4a1b-8a8d-0c90dcb9a836",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "8ec353b4-dee9-43ac-ad9f-afe6fd8926f7",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "26218286-5168-40ff-ba05-824279966692",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "f4e7f6c5-98d3-4047-b4e1-cc03bb562825",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "c2484082-ee1f-458f-b117-6f517307576b",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMPLOYEE_NUMBER",
+            "name": "eMPLOYEENUMBER",
+            "oid": "00680c74-6072-4218-a383-ac25ecd49fc2",
+            "required": false,
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "FULL_NAME",
+            "name": "fULLNAME",
+            "oid": "61a62ecd-e0e9-4586-9750-21c98e4d1bf9",
+            "type": "string"
+        },
+        {
+            "displayLabel": "HOST_COMPANY",
+            "name": "hOSTCOMPANY",
+            "oid": "3e1a1b80-9044-48de-8b59-8c6757ec965d",
+            "type": "string"
+        },
+        {
+            "displayLabel": "PERSON_ID",
+            "name": "pERSONID",
+            "oid": "dbd95e02-5b9a-4c79-85cc-4cb19e7b1615",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "START_DATE",
+            "name": "sTARTDATE",
+            "oid": "5d408c7d-6961-4f32-8fcb-b5573db5f2ca",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "END_DATE",
+            "name": "eNDDATE",
+            "oid": "410374a3-613c-4ba0-a155-68670d5a6f2d",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "ASSIGNMENT_TYPE",
+            "name": "aSSIGNMENTTYPE",
+            "oid": "cb4d9dba-ba55-4104-ae46-7353a841ee7b",
+            "type": "string"
+        },
+        {
+            "displayLabel": "HOST_COMPANY_INOUTGROUP",
+            "name": "hOSTCOMPANYINOUTGROUP",
+            "oid": "ad8dfc98-5b36-4c14-a410-bcfc1d0fac3e",
+            "required": false,
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "Mobility",
+    "oid": "73084495-82ce-427e-a3cf-f9146f363655",
+    "relationships": [
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

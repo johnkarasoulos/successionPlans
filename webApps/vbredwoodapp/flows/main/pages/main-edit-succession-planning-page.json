@@ -1,0 +1,85 @@
+{
+  "title": "Edit SuccessionPlanning",
+  "description": "Updates single SuccessionPlanning record",
+  "variables": {
+    "fetchedSuccessionPlanning": {
+      "type": "getSuccessionPlanningResponse"
+    },
+    "saveSuccessionPlanningChainInProgress": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "successionPlanning": {
+      "type": "getSuccessionPlanningResponse"
+    },
+    "successionPlanningETag": {
+      "type": "string"
+    },
+    "successionPlanningId": {
+      "type": "string",
+      "required": true,
+      "input": "fromUrl"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getSuccessionPlanningResponse": {
+      "endpoint": "get_SuccessionPlanning",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getSuccessionPlanningResponse": {
+      "sUCCESSORID": "number",
+      "sUCCESSORNAME": "string",
+      "sUCCESSORREADINESSLEVEL": "string"
+    }
+  },
+  "eventListeners": {
+    "backButtonClicked": {
+      "chains": [
+        {
+          "chain": "goBackChain"
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chain": "saveSuccessionPlanningChain"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "loadSuccessionPlanningChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "root": "navigateToMainPotentiazlsuccessors",
+  "description": "Go to parent page",
+  "actions": {
+    "navigateToMainPotentiazlsuccessors": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "main-potentiazlsuccessors",
+        "params": {
+          "CurrentJob": "{{ $page.variables.jobID4Succession }}",
+          "currentJobID": "{{ $page.variables.jobID4Succession }}"
+        }
+      },
+      "@dt": {
+        "targetType": "page"
+      }
+    }
+  },
+  "variables": {
+    "parentPage": {
+      "type": "string",
+      "required": true,
+      "input": "fromCaller"
+    }
+  }
+}

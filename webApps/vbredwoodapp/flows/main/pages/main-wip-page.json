@@ -1,0 +1,53 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "candidatesForSuccessorsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_candidatesForSuccessors",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallCandidatesForSuccessorsResponse"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallCandidatesForSuccessorsResponse": {
+      "endpoint": "getall_candidatesForSuccessors",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getallCandidatesForSuccessorsResponse": {
+      "items": [
+        {
+          "employeeFullName": "string",
+          "eMPLOYEENUMBER": "number",
+          "eMPLOYMENTTYPE": "string",
+          "id": "number"
+        }
+      ]
+    }
+  },
+  "eventListeners": {},
+  "imports": {
+    "components": {
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-sp-list-item-template": {
+        "path": "oj-sp/list-item-template/loader"
+      },
+      "oj-sp-smart-search-page": {
+        "path": "oj-sp/smart-search-page/loader"
+      }
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-61-icoSmartSearchPage48Svg"
+  }
+}

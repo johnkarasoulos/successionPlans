@@ -1,0 +1,174 @@
+{
+    "displayLabel": "MentorMentee",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "4d06fdb3-ab43-483a-a943-232c2366045a",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "e57a5d9e-ecdc-45a6-82f3-b66ab0505d6a",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "0b7b6cd6-4806-4082-b6e3-afbecb4f4ecb",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "63c93706-a865-4206-9735-3a488a2b44d2",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "e35b9350-09b0-40ee-9649-fcaf46601d4c",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "83ebd72a-138f-4fef-99ce-67cb50cf3d13",
+            "type": "number"
+        },
+        {
+            "displayLabel": "MENTOR_PERSON_ID",
+            "name": "mENTORPERSONID",
+            "oid": "da39017f-f4dd-48d9-91d3-49a4d716c35d",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "MENTOR_EMPLOYEE_NUMBER",
+            "name": "mENTOREMPLOYEENUMBER",
+            "oid": "cac39625-d4f8-45b9-839f-83d1047197f6",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "MENTOR_NAME",
+            "name": "mENTORNAME",
+            "oid": "6e377f55-da71-4c5a-b0f5-910ad111f6a3",
+            "type": "string"
+        },
+        {
+            "displayLabel": "MENTEE_PERSON_ID",
+            "name": "mENTEEPERSONID",
+            "oid": "eb14dad1-7162-4cd2-a84d-76f9e0af9be9",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "MENTEE_EMPLOYEE_NUMBER",
+            "name": "mENTEEEMPLOYEENUMBER",
+            "oid": "1cd670d8-6a6d-4eb5-bbb1-42eb4674883c",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "MENTEE_NAME",
+            "name": "mENTEENAME",
+            "oid": "a17179aa-d939-4893-94c6-7aab021eeed8",
+            "type": "string"
+        },
+        {
+            "displayLabel": "MENTEE_PROGRESS",
+            "name": "mENTEEPROGRESS",
+            "oid": "14d6fdb9-aa18-46bd-8e03-0abfd587780b",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "PROGRAM_ID",
+            "name": "pROGRAMID",
+            "oid": "0ebc1577-2ca7-4140-906e-1974cf5f8508",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "PROGRAM_NAME",
+            "name": "pROGRAMNAME",
+            "oid": "2bbe4160-ab92-4faf-9456-0fe5e6a69de5",
+            "type": "string"
+        },
+        {
+            "displayLabel": "YEAR",
+            "name": "yEAR",
+            "oid": "011283b7-23a1-4d97-908a-70b36e02fd16",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "MONTH",
+            "name": "mONTH",
+            "oid": "e5457ca6-7382-418d-b6de-069e18c75149",
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "MentorMentee",
+    "oid": "682305c3-979e-47cc-b0ce-2b6a5ac2fae5",
+    "relationships": [
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

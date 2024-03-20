@@ -1,0 +1,123 @@
+{
+    "displayLabel": "EmployeeInfo",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "name": "id",
+            "oid": "617260e1-e21c-4192-9350-c712cfa6fdb4",
+            "required": true,
+            "type": "number"
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "53710f5f-6a19-41e0-9377-0d7f65e1bab2",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "0981f4c1-2d6c-4584-ac84-444cdf05da5d",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "10440c14-9d07-40e1-9d3a-72dd41b4814f",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "213b1224-a18a-4b1d-8c61-9684a4bdd150",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "3a077e8a-04df-4dc7-84b6-b6386e19b697",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMP_NAME",
+            "name": "eMPNAME",
+            "oid": "f591a3d9-bd2c-4188-aeda-7aa92b8058b0",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "EMPLOYEE_NUMBER",
+            "name": "eMPLOYEENUMBER",
+            "oid": "1807154b-4e9d-4c9e-84ac-ea768fad0db2",
+            "required": true,
+            "type": "number",
+            "internal": true,
+            "key": true,
+            "unique": true
+        },
+        {
+            "displayLabel": "Date of Joining",
+            "name": "dateOfJoining",
+            "oid": "e725cb90-54d1-4623-ab7a-784e3537f600",
+            "required": true,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Date of Birth",
+            "name": "dateOfBirth",
+            "oid": "bef57b87-8a06-4400-92f5-527a65dcf598",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Nationality",
+            "name": "nationality",
+            "oid": "172788b5-a5d9-4619-824e-7fad0a2f337c",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Gender",
+            "name": "gender",
+            "oid": "390db8cb-87f8-4029-9667-b545d975f5a7",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "LOCATION_NAME",
+            "name": "lOCATIONNAME",
+            "oid": "b683201c-c605-4f43-8b17-8ae452d6dd9c",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "EMAIL_ADDR",
+            "name": "eMAILADDR",
+            "oid": "bae24a56-d4f9-420d-86c9-601ef5f23acb",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "UAE/Non-UAE",
+            "name": "uAENonUAE",
+            "oid": "5829f02b-a3a1-4b8a-8b04-4d0245bc7406",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Photo",
+            "name": "photo",
+            "oid": "c3cd73f4-7d24-4085-b549-043d776253ea",
+            "required": true,
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "EmployeesData",
+    "oid": "f3281c97-6fca-4d39-bc70-76fa59dc4fef"
+}

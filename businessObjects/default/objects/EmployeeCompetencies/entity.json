@@ -1,0 +1,159 @@
+{
+    "displayLabel": "EmployeeCompetencies",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "274c279a-11e5-4385-ac1f-ab89e0ca9965",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "241f09c7-a60b-4cb3-9d13-c1f891a58afb",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "96061b72-878c-44fe-b405-0d5b56ac6041",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "0db7fb4a-5043-40bd-b421-d03ad21c895b",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "37f86a00-6beb-4464-bd29-834450ffb289",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "3b75a2ce-cee4-416e-b783-726f58841b42",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMPLOYEE_NUMBER",
+            "name": "eMPLOYEENUMBER",
+            "oid": "59815cc6-11d7-4a08-9078-e57bab6bb880",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMPLOYEEFULLNAME",
+            "name": "eMPLOYEEFULLNAME",
+            "oid": "191c45aa-92ec-42f3-a424-0cbec4a0a858",
+            "type": "string"
+        },
+        {
+            "displayLabel": "COMPETENCYTYPE",
+            "name": "cOMPETENCYTYPE",
+            "oid": "c6c1e23e-ff25-4f2f-8254-0ce840730d98",
+            "type": "string"
+        },
+        {
+            "displayLabel": "COMPETENCYID",
+            "name": "cOMPETENCYID",
+            "oid": "258a25bf-1a6b-498c-a621-48d9742e0b30",
+            "type": "number"
+        },
+        {
+            "displayLabel": "COMPETENCYNAME",
+            "name": "cOMPETENCYNAME",
+            "oid": "786e2680-f9cb-4fb7-a245-390511073203",
+            "type": "string"
+        },
+        {
+            "displayLabel": "TARGETPROFICIENCYLEVEL",
+            "name": "tARGETPROFICIENCYLEVEL",
+            "oid": "77b0d5a8-b1e7-4ade-9f96-2603327fdf96",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "MAPPEDPROFICIENCYLEVEL",
+            "name": "mAPPEDPROFICIENCYLEVEL",
+            "oid": "153d514f-7aab-429c-bd4a-4bfa43ef9a81",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "ASSETID",
+            "name": "aSSETID",
+            "oid": "7d4300e7-9396-468f-9ca8-11bc28853651",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "ASSETNAME",
+            "name": "aSSETNAME",
+            "oid": "eb46d269-45a3-40b4-bfa3-d0d5b603b61f",
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "EmployeeCompetencies",
+    "oid": "0ec045e9-74ac-49bb-a7f7-a9f8b2a3e57c",
+    "relationships": [
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

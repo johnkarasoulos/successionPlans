@@ -1,0 +1,22 @@
+{
+  "component-dependencies": {
+    "oj-sp": {
+      "version": "2401.0.0",
+      "components": {
+        "welcome-page": "2401.0.0",
+        "list-item-template": "2401.0.0",
+        "profile-card": "2401.0.0",
+        "card": "2401.0.0",
+        "smart-search-page": "2401.0.0",
+        "information-organizer": "2401.0.0",
+        "bottom-drawer-template": "2401.0.0",
+        "foldout-layout": "2401.0.0",
+        "horizontal-overview": "2401.0.0",
+        "foldout-panel-summarizing": "2401.0.0",
+        "general-drawer-template": "2401.0.0",
+        "input-rich-text-2": "2401.0.0",
+        "collection-container": "2401.0.0"
+      }
+    }
+  }
+ }

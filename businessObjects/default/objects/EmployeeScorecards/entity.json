@@ -1,0 +1,106 @@
+{
+    "displayLabel": "EmployeeScorecards",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "16cf3831-c465-442e-a8c7-9d84bbdb8136",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "f635b2f9-f2f0-4d70-a48b-9f1f3496c874",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "3e5f228b-b016-42a3-a54e-e658dc763b30",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "58617044-9612-4e63-8a49-764276d3c70f",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "a03c3d73-8aee-42e6-b4d0-6d07c854d028",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "c5bd9c2f-2bb1-48d1-bae8-9ae2e6f57de1",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMPLOYEENUMBER",
+            "name": "EMPLOYEENUMBER",
+            "oid": "7e97ead9-7a5b-4bb8-a605-25fdebb63c0b",
+            "type": "number"
+        },
+        {
+            "displayLabel": "grade",
+            "name": "grade",
+            "oid": "e7cf6344-5267-469b-8b1e-c036bc87549c",
+            "type": "number"
+        },
+        {
+            "displayLabel": "jobID",
+            "name": "JobID",
+            "oid": "6823cf6d-460b-4d97-b02b-5617d8fa70a1",
+            "type": "number"
+        },
+        {
+            "displayLabel": "talentPositionScore",
+            "name": "TalentPositionScore",
+            "oid": "bdec6e4d-e959-4a03-bf0c-80827d317a4f",
+            "type": "number"
+        },
+        {
+            "displayLabel": "performanceRatingScore",
+            "name": "PerformanceRatingScore",
+            "oid": "4b4015db-04e7-4d5d-8729-acd9dcd31274",
+            "type": "number"
+        },
+        {
+            "displayLabel": "internalTenureScore",
+            "name": "internalTenureScore",
+            "oid": "cfa69569-e246-41d0-9c9a-42d306b38904",
+            "type": "number"
+        },
+        {
+            "displayLabel": "functionalScore",
+            "name": "functionalScore",
+            "oid": "e4e9a700-432d-4075-9400-fbad1299edff",
+            "type": "number"
+        },
+        {
+            "displayLabel": "leadScore",
+            "name": "LeadScore",
+            "oid": "7bc86977-9aad-484c-93d6-964e3f348ba1",
+            "type": "number"
+        },
+        {
+            "displayLabel": "totalScore",
+            "name": "TotalScore",
+            "oid": "8aba8898-2123-4d4b-9eb2-dc7e7cf12fe3",
+            "type": "number"
+        }
+    ],
+    "hidden": false,
+    "name": "EmployeeScorecards",
+    "oid": "bd29ef6b-7a0d-4dcd-b241-ad4d868d38a2"
+}

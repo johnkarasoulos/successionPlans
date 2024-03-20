@@ -1,0 +1,56 @@
+<oj-sp-smart-search-page display-mode="mixed" primary-action.display="on" primary-action.label="Successor Selection"
+  page-title='[[ "Jobs for year :"+$variables.successionYear ]]' page-subtitle="List of Jobs"
+  on-sp-primary-action="[[$listeners.smartSearchPageTemplateSpPrimaryAction]]">
+  <oj-input-search slot="search" value="{{ $variables.searchJob }}"></oj-input-search>
+  <oj-list-view display="card" class="oj-listview-card-layout" data="[[$variables.assignmentsListSDP2]]"
+    selection-mode="single" on-first-selected-item-changed="[[$listeners.listViewFirstSelectedItem]]"
+    group-header-position="static" selection-required="true">
+    <template slot="itemTemplate">
+      <oj-list-item-layout class="oj-listitemlayout-padding-off">
+        <oj-sp-profile-card avatar.src="[[ $current.data.Photo ]]" avatar.initials="[[ $current.data.UAENonUAE ]]"
+          badge.style="strong" badge.text="[[ $current.data.UAENonUAE ]]" caption="[[ $current.data.JobName ]]"
+          primary-text="[[ $current.data.EmployeeFullName ]]" secondary-text="[[ $current.data.BUSINESSUNIT ]]"
+          badge.status="success" footer-icon.class="[[ $current.data.EMPLOYMENTTYPE ]]"
+          footer-text.value="[[ $current.data.SUPERVISORNAME ]]" footer-text.label="Supervisor: "
+          selector.row-key="[[ $current.data.JobName ]]" selector.aria-label="List of proposed successors for this job"
+          on-sp-primary-action="[[$listeners.profileCardSpPrimaryAction]]">
+          <oj-form-layout slot="body" label-edge="inside" readonly="true" direction="column"
+            user-assistance-density="compact" max-columns="2" columns="1" class="oj-formlayout-full-width">
+            <h6 class="oj-header">Sector / Division</h6>
+            <oj-input-text readonly="true" value="[[ $current.data.PLATFORMNAME ]]"
+              class="oj-form-control-text-align-start oj-form-control-max-width-sm"></oj-input-text>
+            <h6 class="oj-header">Address</h6>
+            <oj-input-text value="{{ $current.data.LOCATIONNAME }}" readonly="true"
+              class="oj-form-control-text-align-start oj-form-control-max-width-sm"></oj-input-text>
+            <h6 class="oj-header">Performance rating</h6>
+            <oj-input-text readonly="true" value='{{ $current.data.TARGETYEAR + " : "+ $current.data.RATING }}'
+              class="oj-form-control-text-align-start oj-form-control-max-width-sm"></oj-input-text>
+            <oj-button label="Set Critical Job" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction2]]"
+              chroming="solid"></oj-button>
+          </oj-form-layout>
+        </oj-sp-profile-card>
+      </oj-list-item-layout>
+    </template>
+  </oj-list-view>
+  <oj-drawer-popup edge="end" opened="{{ $variables.opendrawer }}">
+    <oj-form-layout id="oj-form-layout--1943870385-1" label-edge="start" class="oj-formlayout-full-width"
+      user-assistance-density="compact">
+      <oj-input-text value="{{ $variables.assignments.JobName }}" readonly="true"
+        class="oj-form-control-max-width-sm oj-form-control-text-align-right"></oj-input-text>
+      <oj-input-text value="{{ $variables.assignments.PLATFORMNAME }}"
+        class="oj-form-control-text-align-right oj-form-control-max-width-sm" readonly="true"></oj-input-text>
+      <oj-input-text value="{{ $variables.assignments.BUSINESSUNIT }}"
+        class="oj-form-control-text-align-right oj-form-control-max-width-sm" readonly="true"></oj-input-text>
+      <oj-input-text value="{{ $variables.assignments.DEPARTMENT }}" readonly="true"
+        class="oj-form-control-text-align-right oj-form-control-max-width-sm"></oj-input-text>
+      <oj-input-text value="{{ $variables.assignments.EMPLOYMENTTYPE }}" readonly="true"
+        class="oj-form-control-text-align-right oj-form-control-max-width-sm"></oj-input-text>
+      <oj-switch value="{{ $variables.assignments.critical }}" label-hint="critical"></oj-switch>
+      <oj-sp-input-rich-text-2 value="{{ $variables.assignments.criticalJustification }}"></oj-sp-input-rich-text-2>
+    </oj-form-layout>
+    <oj-toolbar id="oj-toolbar--1943870385-1" chroming="solid">
+      <oj-button on-oj-action="[[$listeners.saveButtonClicked]]" class="oj-button-sm">Save</oj-button>
+      <oj-button label="Cancel" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction3]]"></oj-button>
+    </oj-toolbar>
+  </oj-drawer-popup>
+</oj-sp-smart-search-page>

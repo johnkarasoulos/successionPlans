@@ -1,0 +1,8 @@
+{
+  "id": "test",
+  "description": "Flow main",
+  "defaultPage": "test-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

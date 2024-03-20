@@ -1,0 +1,9 @@
+<oj-sp-smart-search-page>
+  <oj-list-view data="[[$variables.candidatesForSuccessorsListSDP]]" selection-mode="multiple">
+    <template slot="itemTemplate">
+      <oj-sp-list-item-template
+        columns="[[ [{ overlineText: $current.data.employeeFullName, primaryText: $current.data.eMPLOYEENUMBER, secondaryText: $current.data.eMPLOYMENTTYPE }] ]]"
+        badge.position="trailing" selector.selection-mode="multiple"></oj-sp-list-item-template>
+    </template>
+  </oj-list-view>
+</oj-sp-smart-search-page>

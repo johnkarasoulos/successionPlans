@@ -1,0 +1,433 @@
+{
+    "displayLabel": "Assignements",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "088a6823-281e-425d-999a-d2e785ab15d9",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "25782f9b-8e07-4c1b-9d80-2fe58324662e",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "d468fbf9-3e04-4e69-9673-512afef9e039",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "ccc63276-58ff-48dd-bc9e-abcee1b33424",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "64e073c6-d849-47fc-8a98-0381df6768e6",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "22256f94-eac9-4b15-b9bb-b5989876fb50",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMPLOYEE_NUMBER",
+            "name": "EMPLOYEENUMBER",
+            "oid": "3602c504-c2c9-40ea-a55f-e184da0b962f",
+            "required": false,
+            "type": "number"
+        },
+        {
+            "displayLabel": "Employee Full Name",
+            "name": "EmployeeFullName",
+            "oid": "98a79eb1-5001-4828-99a0-e70eced8e037",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Date of Joining",
+            "name": "DateOfJoining",
+            "oid": "e6da86b5-fd8e-445f-832c-83ba14686925",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Date of Birth",
+            "name": "DateOfBirth",
+            "oid": "a4712a2a-e8d4-4091-98e8-57dcf69be5e8",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Nationality",
+            "name": "Nationality",
+            "oid": "a125802e-c3f7-4e95-8a26-86695ac7af63",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Gender",
+            "name": "Gender",
+            "oid": "27b2008d-2548-4efe-8133-917ea79ab0ec",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "LOCATION_NAME",
+            "name": "LOCATIONNAME",
+            "oid": "e2171ba9-c7e9-4da7-aed2-bdc3249e0700",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "EMAIL_ADDR",
+            "name": "EMAILADDR",
+            "oid": "5848e321-17a7-47a0-9f7c-525a8e621dde",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "UAE/Non-UAE",
+            "name": "UAENonUAE",
+            "oid": "95511ed8-7827-4fdc-80d3-575eec807126",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Photo",
+            "name": "Photo",
+            "oid": "0342186d-9061-4d4c-b802-63560f71d9cf",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Grade Name",
+            "name": "GradeName",
+            "oid": "649051eb-2d80-43c4-824a-33994697001b",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "EMPLOYMENT_TYPE",
+            "name": "EMPLOYMENTTYPE",
+            "oid": "c3fbaa6d-892f-4780-90b2-1c5f41574e4a",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "DEPARTMENT",
+            "name": "DEPARTMENT",
+            "oid": "c5d00b20-2ee1-4a3b-82db-9d2767b1183b",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "PLATFORM_NAME",
+            "name": "PLATFORMNAME",
+            "oid": "ab888c2a-2c78-491a-a9b6-25a84f983199",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "BUSINESS_UNIT",
+            "name": "BUSINESSUNIT",
+            "oid": "ca3ffbee-9d68-4701-a657-e2d7bab65736",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "COURSE_NAME",
+            "name": "COURSENAME",
+            "oid": "f1ef6a71-9229-45d3-a5a8-6a9a12bb5604",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "TYPE",
+            "name": "TRAININGTYPE",
+            "oid": "389bcf08-4965-4b7b-ae30-987552de75c7",
+            "type": "string"
+        },
+        {
+            "displayLabel": "START_DATE",
+            "name": "STARTDATE",
+            "oid": "8b0c742f-83de-4b9b-a3ba-70bb92307286",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "END_DATE",
+            "name": "ENDDATE",
+            "oid": "799befcb-dca6-4af4-83ce-2261ab3e87f0",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "TRAINING_HOURS",
+            "name": "TRAININGHOURS",
+            "oid": "1fae0aec-b2a6-428a-aab7-e71626696a33",
+            "required": false,
+            "type": "number"
+        },
+        {
+            "displayLabel": "TITLE",
+            "name": "TITLE",
+            "oid": "0833f72d-7610-4589-bcba-a859e2abcf3e",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "TITLE_STD",
+            "name": "TITLESTD",
+            "oid": "706b82f2-9179-4369-a2f8-a2b01a4d390b",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "EQUALIZED",
+            "name": "EQUALIZED",
+            "oid": "e5d34985-bf07-47bb-89c9-32846faccf90",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "COUNTRY",
+            "name": "COUNTRY",
+            "oid": "0f6c1108-6474-4452-8de9-6ace77cd658d",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "UNIVERSITY",
+            "name": "UNIVERSITY",
+            "oid": "ff6d06d0-df53-4eb5-80ee-56c60c2da138",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "COMPETENCY_TYPE",
+            "name": "COMPETENCYTYPE",
+            "oid": "62d7507b-20b8-43cb-a1e0-3749f925e095",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "COMPETENCY_ID",
+            "name": "COMPETENCYID",
+            "oid": "8f59d483-5e87-48aa-b440-f75c04154d24",
+            "required": false,
+            "type": "number"
+        },
+        {
+            "displayLabel": "COMPETENCY_NAME",
+            "name": "COMPETENCYNAME",
+            "oid": "7cecd5b6-6185-4790-954a-0e6b76810c9a",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "TARGET_PROFICIENCY_LEVEL",
+            "name": "TARGETPROFICIENCYLEVEL",
+            "oid": "6184e240-7680-4485-9d7c-7e0289883ea2",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "MAPPED_PROFICIENCY_LEVEL",
+            "name": "MAPPEDPROFICIENCYLEVEL",
+            "oid": "c7e2a07b-5e78-495f-8319-5877d0c26778",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "ASSET_ID",
+            "name": "ASSETID",
+            "oid": "022c6636-4556-4218-88d4-5df6c82bb6db",
+            "required": false,
+            "type": "number"
+        },
+        {
+            "displayLabel": "ASSET_NAME",
+            "name": "ASSETNAME",
+            "oid": "d4fa9325-5786-46fb-8e23-ddc1962bcfaa",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Job ID",
+            "name": "JobID",
+            "oid": "3b5e528f-499a-477b-a0c9-2f8501fe53ce",
+            "required": false,
+            "type": "number"
+        },
+        {
+            "displayLabel": "Job Name",
+            "name": "JobName",
+            "oid": "fbda05c4-894e-4197-b5f3-828f5447fe49",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Effective start Date",
+            "name": "EffectiveStartDate",
+            "oid": "ed14d5aa-a788-4825-9623-c491ebee4bae",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Effective End Date ",
+            "name": "EffectiveEndDate",
+            "oid": "5c20dcfd-aa54-49b4-8b31-a794535cc540",
+            "required": false,
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "LOCATION_NAME",
+            "name": "LOCATIONNAME2",
+            "oid": "11349ff9-b0d9-4217-89f2-431f3f927bb8",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "SUPERVISOR_EMP_NO",
+            "name": "SUPERVISOREMPNO",
+            "oid": "45a8997c-e648-4dee-8806-c49c74c30dc2",
+            "required": false,
+            "type": "number"
+        },
+        {
+            "displayLabel": "SUPERVISOR_NAME",
+            "name": "SUPERVISORNAME",
+            "oid": "31b4c7c5-ca00-42f1-952d-6eb15f1d5d97",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "PLAN_NAME",
+            "name": "PLANNAME",
+            "oid": "3097d630-81c0-41b3-89be-8e0706f99b15",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "RATING",
+            "name": "RATING",
+            "oid": "ef9374c0-e64d-4f91-9ac5-2981cb20071f",
+            "required": false,
+            "type": "number",
+            "scale": 1
+        },
+        {
+            "displayLabel": "FINAL_STATUS",
+            "name": "FINALSTATUS",
+            "oid": "e95d24ea-0f71-42f1-84fa-b80b4239bfb8",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "DOCUMENT_NAME",
+            "name": "DOCUMENTNAME",
+            "oid": "5f94b4db-d0c2-4eab-bfe8-8313d4d27c8b",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "MGR_FINAL_OUTCOME",
+            "name": "MGRFINALOUTCOME",
+            "oid": "d4bc4fed-9c84-436c-a4eb-657fd35872e1",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "OUTCOME_TYPE",
+            "name": "OUTCOMETYPE",
+            "oid": "2f87c729-1b6d-4e89-b23b-3ad9f3d41abb",
+            "required": false,
+            "type": "string"
+        },
+{
+            "displayLabel": "TARGET_YEAR",
+            "name": "TARGETYEAR",
+            "oid": "d7abe806-1e8b-48bf-85bb-a8f4299610bb",
+            "required": false,
+            "type": "number"
+        },
+        {
+            "type": "boolean",
+            "name": "critical",
+            "oid": "43cf5484-11e0-4017-b8c1-e36fa15712a8",
+            "displayLabel": "critical"
+        }        ,
+        {
+            "type": "string",
+            "name": "criticalJustification",
+            "oid": "cf059781-4301-496a-bec2-3af4b1591e47",
+            "displayLabel": "criticalJustification"
+        }
+    ],
+    "hidden": false,
+    "name": "Assignments",
+    "oid": "f81a468d-8d6d-4197-b2a2-780a00f18f73",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

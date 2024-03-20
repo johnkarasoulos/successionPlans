@@ -1,0 +1,44 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.responsive-padding="on" page-title="Setup and Submit  Succession Plan" overline-text="Configuration"
+  description-text="Provide the readiness level for each successor" primary-action.label="Submit Succession Plan"
+  primary-action.icon="oj-ux-ico-video-create" on-sp-primary-action="[[$listeners.ojSpWp1SpPrimaryAction2]]"
+  display-options.in-flow-back="true">
+  <oj-sp-collection-container functional-primary-action-group.label="Submit Plan">
+    <oj-toolbar id="oj-toolbar-for-oj-form-layout--1354937896-1" chroming="solid" class="oj-toolbar-top-border">
+      <oj-button label="Return" class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+      <oj-button label="Submit Succession plan" class="oj-button-sm" chroming="solid"
+        on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+    </oj-toolbar>
+    <div class="oj-flex"
+      data-vb-layout-type="flex">
+    </div>
+    <oj-validation-group id="sPPKGSPCREATEPLAN010000-validation-group--1354937896-1">
+      <oj-form-layout id="oj-form-layout--1354937896-1" label-width="100" direction="column"
+        class="oj-formlayout-full-width" label-edge="start" colspan-wrap="wrap" user-assistance-density="compact">
+        <oj-select-single label-hint="Owner of the plan:" data="[[$variables.personalInfoListSDP3]]" item-text="eMPNAME"
+          class="" user-assistance-density="compact" valid="valid"
+          on-value-item-changed="[[$listeners.selectValueItem2]]" value="{{ $variables.PlanOwnerPersonNumber }}"
+          label-edge="inside">
+          <template slot="itemTemplate">
+            <oj-input-text label-hint="Plan Owner Person Number"
+              class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-width-sm"
+              readonly="true" disabled="true"></oj-input-text>
+          </template>
+        </oj-select-single>
+        <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.workersInfo2ListSDP]]"
+          columns='[{"headerText":"Full name","field":"eMPNAME"},{"headerText":"Person Number","field":"eMPLOYEEID"},{"headerText":"Readiness Level","template":"Readiness","field":"ReadinessLevel"}]'
+          selection-mode.row="multiple" display="grid" horizontal-grid-visible="enabled" vertical-grid-visible="enabled"
+          class="" selection-mode.column="none" on-first-selected-row-changed="[[$listeners.tableFirstSelectedRow]]"
+          on-selected-changed="[[$listeners.tableSelected]]">
+          <template slot="Readiness">
+            <oj-select-single label-hint="Readiness Level" data="[[$variables.readinessStatusListSDP2]]"
+              item-text="status" value="{{ $current.row.readinessLevel }}"></oj-select-single>
+          </template>
+        </oj-table>
+      </oj-form-layout>
+    </oj-validation-group>
+  </oj-sp-collection-container>
+  <oj-input-text label-hint="Enter Plan name" slot="search" value="{{ $variables.PlanName }}"></oj-input-text>
+
+</oj-sp-welcome-page>

@@ -1,0 +1,63 @@
+<oj-sp-smart-search-page display-mode="mixed" page-title="List of proposed successors"
+  primary-action.label="Compare Successors"
+  secondary-actions='[{"id":"getMoreFromModel","label":"Get more proposals","display":"disabled"}]'
+  on-sp-primary-action="[[$listeners.smartSearchPageTemplateSpPrimaryAction]]" display-options.go-to-parent="true"
+  on-sp-go-to-parent="[[$listeners.smartSearchPageTemplateSpGoToParent]]">
+  <oj-list-view data="[[$variables.candidatesForSuccessorsListSDP]]" display="card" selection-mode="multiple"
+    selection-required="true" class="oj-listview-card-layout oj-group-header-sm"
+    on-selected-changed="[[$listeners.listViewSelected]]" scroll-policy="loadMoreOnScroll">
+    <template slot="itemTemplate">
+      <oj-list-item-layout>
+        <oj-sp-profile-card avatar.src="[[ $current.data.photo ]]" badge.text="[[ $current.data.uAENonUAE ]]"
+          badge.status="success" badge.style="strong" caption="[[ $current.data.jobName ]]"
+          footer-text.label="Supervisor:" footer-text.value="[[ $current.data.sUPERVISORNAME ]]"
+          primary-text="[[ $current.data.employeeFullName ]]" secondary-text="[[ $current.data.bUSINESSUNIT ]]"
+          selector.selection-mode="multiple"
+          primary-actions='[{"id":"CandidateComparison","label":"Compare Candidate","icon":"oj-ux-ico-menu-select-many","type":"default"}]'
+          selector.row-key="[[ $current.data.eMPLOYEENUMBER ]]">
+          <oj-accordion slot="body" multiple="true" id="successorInfo">
+            <oj-collapsible title="EmployeeInfo">
+                <oj-input-text readonly="true" value="{{ $current.data.pLATFORMNAME }}"
+                  class="oj-form-control-max-width-sm oj-form-control-text-align-end"
+                  label-hint="Sector/Division"></oj-input-text>
+                <oj-input-text readonly="true" class="oj-form-control-max-width-sm oj-form-control-text-align-end"
+                  value="{{ $current.data.lOCATIONNAME }}" label-hint="Address"></oj-input-text>
+                <oj-input-text readonly="true" class="oj-form-control-max-width-sm oj-form-control-text-align-end"
+                  value='{{ $current.data.tARGETYEAR + " : " + $current.data.rATING }}' label-hint="Performance rating"></oj-input-text>
+                <h6 class="oj-header" slot="header">Employee Info
+                    <span class="oj-ux-ico-person-info-search"></span>
+                </h6>
+                <oj-input-text label-hint="Date of Joining"
+                  class="oj-form-control-max-width-sm oj-form-control-text-align-end" readonly="true"
+                  value="{{ $current.data.dateOfJoining }}"></oj-input-text>
+                <oj-input-text label-hint="Grade" readonly="true"
+                  class="oj-form-control-max-width-sm oj-form-control-text-align-end"
+                  value="{{ $current.data.gradeName }}"></oj-input-text>
+                <oj-input-text value="{{ $current.data.eMPLOYMENTTYPE }}" readonly="true"
+                  class="oj-form-control-max-width-sm oj-form-control-text-align-end" label-hint="Employment type"></oj-input-text>
+            </oj-collapsible>
+            <oj-collapsible>
+                <h6 class="oj-header" slot="header">Talent Metrics
+                    <span class="oj-ux-ico-gauge-rating"></span>
+                </h6>
+                <oj-input-text label-hint="Business Impact"
+                  class="oj-form-control-text-align-end oj-form-control-max-width-sm"
+                  value="{{ $current.data.bUSINESSIMPACT }}"></oj-input-text>
+                <oj-input-text label-hint="Previous Title"
+                  class="oj-form-control-text-align-end oj-form-control-max-width-sm" readonly="true"></oj-input-text>
+                <oj-input-text label-hint="Successor To" readonly="true"
+                  class="oj-form-control-text-align-end oj-form-control-max-width-md"
+                  value="{{ $current.data.sUPERVISORNAME }}"></oj-input-text>
+                <oj-input-text label-hint="Matching Score"></oj-input-text>
+                <oj-input-text label-hint="Ranking"></oj-input-text>
+            </oj-collapsible>
+          </oj-accordion>
+        </oj-sp-profile-card>
+      </oj-list-item-layout>
+    </template>
+  </oj-list-view>
+  <oj-input-text slot="search" value="{{ $variables.CurrentJob }}" readonly="true"
+    class="oj-form-control-text-align-start" label-hint="Job Name: "></oj-input-text>
+  <oj-input-text label-hint="IncumbentPersonNumber:" slot="search" value="{{ $variables.IncumbentPersonNumber }}"
+    readonly="true"></oj-input-text>
+</oj-sp-smart-search-page>

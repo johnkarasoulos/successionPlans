@@ -1,0 +1,69 @@
+{
+  "variables": {
+    "configuration": {
+      "type": {
+        "hookHandler": "vb/RestHookHandler"
+      },
+      "input": "fromCaller",
+      "required": true
+    },
+    "limit": {
+      "type": "number",
+      "input": "fromCaller",
+      "required": true
+    },
+    "offset": {
+      "type": "number",
+      "input": "fromCaller",
+      "required": true
+    }
+  },
+  "root": "fetchAction",
+  "actions": {
+    "fetchAction": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "//": "specify below the endpoint for next and previous items",
+        "endpoint": "",
+        "uriParams": {
+          "limit": "{{ $chain.variables.limit }}",
+          "offset": "{{ $chain.variables.offset }}"
+        },
+        "hookHandler": "{{ $variables.configuration.hookHandler }}"
+      },
+      "outcomes": {
+        "success": "processResults",
+        "failure": "returnFailureResponse"
+      }
+    },
+    "processResults": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.nextStep": {
+          "source": "{{ { 'label': 'Update nextStep variable based on fetched results'} }}"
+        },
+        "$page.variables.previousStep": {
+          "source": "{{ {'label': 'Update previousStep variable based on fetched results'} }}"
+        }
+      },
+      "outcomes": {
+        "success": "returnSuccessResponse",
+        "failure": "returnFailureResponse"
+      }
+    },
+    "returnSuccessResponse": {
+      "module": "vb/action/builtin/returnAction",
+      "parameters": {
+        "outcome": "success",
+        "payload": "{{ $chain.results.fetchAction }}"
+      }
+    },
+    "returnFailureResponse": {
+      "module": "vb/action/builtin/returnAction",
+      "parameters": {
+        "outcome": "failure",
+        "payload": "{{ $chain.results.fetchAction }}"
+      }
+    }
+  }
+}

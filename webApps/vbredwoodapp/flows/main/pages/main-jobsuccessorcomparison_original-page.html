@@ -1,0 +1,216 @@
+<div>
+  <oj-sp-foldout-layout id="foldout_layout_Horizontal_page" animate="[[$page.variables.animate]]"
+    previous-step="[[$variables.previousStep]]" next-step="[[$variables.nextStep]]"
+    on-sp-go-to-parent="[[$listeners.onSpGoToParent]]" selected-panel="{{$variables.selectedPanel}}"
+    on-sp-previous="[[$listeners.onSpPrevious]]" on-sp-next="[[$listeners.onSpNext]]"
+    display-mode="[[ $variables.displayMode ]]"
+    display-options.bidirectional-navigation="[[ $variables.bidirectionalNavigation ]]"
+    display-options.go-to-parent="[[ $variables.goToParent ]]">
+    
+    <!-- the below is default slot, maximum 6 oj-sp-foldout-panel could be added -->
+    <oj-sp-foldout-panel-summarizing panel-title="[[ $page.variables.panelOneTitle]]" class="profile-panel">
+      <!-- below div is default slot for the content of the first foldout panel -->
+      <!-- Summary Slot: Summary Section of the first foldout panel -->
+    </oj-sp-foldout-panel-summarizing>
+
+    
+    <oj-sp-foldout-panel-summarizing panel-title="[[ $page.variables.panelTwoTitle]]" class="profile-panel">
+      <!-- below div is default slot for the content of the first foldout panel -->
+      <!-- Summary Slot: Summary Section of the second foldout panel -->
+      <oj-form-layout readonly="true" label-edge="start" label-width="40%" class="oj-formlayout-full-width"
+        user-assistance-density="compact">
+        <oj-input-text value="[[ $variables.candidatesForSuccessors.employeeFullName ]]" readonly="true"
+          label-hint="Name"
+          class="oj-form-control-text-align-right oj-form-control-max-width-sm oj-form-control-width-sm oj-form-control-text-align-start oj-form-control-full-width"></oj-input-text>
+        <oj-input-number value="[[ $variables.candidatesForSuccessors.eMPLOYEENUMBER ]]" readonly="true"
+          label-hint="Employee Nbr:" converter='{"options":{"useGrouping":false},"type":"number"}'
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-number>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors.pLATFORMNAME ]]" readonly="true"
+          label-hint="Platform: "
+          class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-number value="[[ $variables.candidatesForSuccessors.rATING ]]" readonly="true" label-hint="Rating:"
+          converter='{"options":{"useGrouping":false},"type":"number"}'
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-number>
+        <oj-input-date value="[[ $variables.candidatesForSuccessors.dateOfJoining ]]" readonly="true"
+          label-hint="Date of Joining:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+          converter='{"type": "datetime", "options": {"pattern":"dd/MM/yyyy"}}'></oj-input-date>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors.gradeName ]]" readonly="true" label-hint="Grade:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors.eMPLOYMENTTYPE ]]" readonly="true"
+          label-hint="Emplyeement type:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors.bUSINESSIMPACT ]]" readonly="true"
+          label-hint="Business impact:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors.SUPERVISORNAME ]]" readonly="true"
+          label-hint="Supervisor: "
+          class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+      </oj-form-layout>
+      <div slot="summary">
+        <oj-bind-if test="[[ ($variables.candidateEmployeeNbr1) !== undefined ]]">
+          <oj-form-layout readonly="true" label-width="20%" class="oj-formlayout-full-width" label-edge="top"
+            columns="3" max-columns="3" colspan-wrap="wrap" direction="row" user-assistance-density="compact"
+            id="oj-form-layout-823464067-1">
+            <oj-button class="oj-button-sm" chroming="solid" label="[[ $variables.selectButtonLabel1 ]]"
+              on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+            <oj-input-text value="[[ $variables.candidatesForSuccessors5.jobName ]]" readonly="true"
+              label-hint="Current Job:" slot="start"
+              class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+              user-assistance-density="compact"></oj-input-text>
+            <oj-avatar class="oj-flex-item oj-sm-flex-initial" src="[[ $variables.candidatesForSuccessors5.photo ]]"
+              size="xs" shape="circle" dir="rtl"></oj-avatar>
+          </oj-form-layout>
+        </oj-bind-if>
+      </div>
+    </oj-sp-foldout-panel-summarizing>
+    <oj-sp-foldout-panel-summarizing panel-title="[[ $variables.panelThreeTitle ]]">
+      <oj-form-layout readonly="true" class="oj-formlayout-full-width" label-width="40%" label-edge="start"
+        user-assistance-density="compact">
+        <oj-input-text value="[[ $variables.candidatesForSuccessors3.employeeFullName ]]" readonly="true"
+          label-hint="Name:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-number value="[[ $variables.candidatesForSuccessors3.eMPLOYEENUMBER ]]" readonly="true"
+          label-hint="Employee Nbr:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+          converter='{"options":{"useGrouping":false},"type":"number"}'></oj-input-number>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors3.pLATFORMNAME ]]" readonly="true"
+          label-hint="Platform: "
+          class="oj-form-control-text-align-start oj-form-control-text-align-right oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-number value="[[ $variables.candidatesForSuccessors3.rATING ]]" readonly="true" label-hint="Rating:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+          converter='{"options":{"useGrouping":false},"type":"number"}'></oj-input-number>
+        <oj-input-date value="[[ $variables.candidatesForSuccessors3.dateOfJoining ]]" readonly="true"
+          label-hint="Date of Joining:" converter='{"type": "datetime", "options": {"pattern":"dd/MM/yyyy"}}'
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-date>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors3.gradeName ]]" readonly="true" label-hint="Grade:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors3.eMPLOYMENTTYPE ]]" readonly="true"
+          label-hint="Emplyeement type:"
+          class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors3.bUSINESSIMPACT ]]" readonly="true"
+          label-hint="Business impact:"
+          class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+        <oj-input-text value="[[ $variables.candidatesForSuccessors3.sUPERVISORNAME ]]" readonly="true"
+          label-hint="Supervisor: "
+          class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+      </oj-form-layout>
+      <div slot="summary">
+        <oj-bind-if test="[[ ($variables.candidateEmployeeNbr2) !== undefined ]]">
+          <oj-form-layout readonly="true" label-width="20%" label-edge="top" class="oj-formlayout-full-width"
+            columns="3" max-columns="3" colspan-wrap="wrap" direction="row" user-assistance-density="compact">
+            <oj-button class="oj-button-sm" label="[[ $variables.selectButtonLabel2 ]]"
+              on-oj-action="[[$listeners.buttonAction2]]" chroming="solid"></oj-button>
+            <oj-input-text value="[[ $variables.candidatesForSuccessors4.jobName ]]" readonly="true"
+              label-hint="Current Job:"
+              class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+              user-assistance-density="compact"></oj-input-text>
+            <oj-avatar class="oj-flex-item oj-sm-flex-initial" size="xs" shape="circle"
+              src="[[ $variables.candidatesForSuccessors4.photo ]]" dir="rtl"></oj-avatar>
+          </oj-form-layout>
+        </oj-bind-if>
+      </div>
+    </oj-sp-foldout-panel-summarizing>
+    <oj-sp-foldout-panel-summarizing panel-title="[[ $variables.panelForthTitle ]]">
+      <div slot="summary">
+        <oj-bind-if test="[[ ($variables.candidateEmployeeNbr3) !== undefined ]]">
+          <oj-form-layout readonly="true" max-columns="3" columns="3" label-width="20%" direction="row"
+            label-edge="top" class="oj-formlayout-full-width" colspan-wrap="wrap" user-assistance-density="compact">
+            <oj-button label="[[ $variables.selectButtonLabel3 ]]" chroming="solid" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction3]]"></oj-button>
+            <oj-input-text value="[[ $variables.candidatesForSuccessors6.jobName ]]" readonly="true"
+              label-hint="Current Job:"
+              class="oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"
+              user-assistance-density="compact"></oj-input-text>
+            <oj-avatar class="oj-flex-item oj-sm-flex-initial" src="[[ $variables.candidatesForSuccessors6.photo ]]"
+              size="xs" shape="circle" dir="rtl"></oj-avatar>
+          </oj-form-layout>
+        </oj-bind-if>
+      </div>
+      <oj-bind-if test="[[ ($variables.candidateEmployeeNbr3) !== undefined ]]">
+        <oj-form-layout readonly="true" label-width="40%" class="oj-formlayout-full-width" label-edge="start"
+          user-assistance-density="compact">
+          <oj-input-text value="[[ $variables.candidatesForSuccessors8.employeeFullName ]]" readonly="true"
+            label-hint="Name:"
+            class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+          <oj-input-number value="[[ $variables.candidatesForSuccessors8.eMPLOYEENUMBER ]]" readonly="true"
+            label-hint="Employee Nbr:" converter='{"options":{"useGrouping":false},"type":"number"}'
+            class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-number>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors8.pLATFORMNAME ]]" readonly="true"
+            label-hint="Platform: "
+            class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+          <oj-input-number value="[[ $variables.candidatesForSuccessors8.rATING ]]" readonly="true" label-hint="Rating:"
+            converter='{"options":{"useGrouping":false},"type":"number"}'
+            class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-number>
+          <oj-input-date-time value="[[ $variables.candidatesForSuccessors8.dateOfJoining ]]" readonly="true"
+            label-hint="Date of Joining:" converter='{"type": "datetime", "options": {"pattern":"dd/MM/yyyy"}}'
+            class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-date-time>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors8.gradeName ]]" readonly="true" label-hint="Grade:"
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors8.eMPLOYMENTTYPE ]]" readonly="true"
+            label-hint="Emplyeement type:"
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors8.bUSINESSIMPACT ]]" readonly="true"
+            label-hint="Business impact:"
+            class="oj-form-control-full-width oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors8.sUPERVISORNAME ]]" readonly="true"
+            label-hint="Supervisor: "
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+        </oj-form-layout>
+      </oj-bind-if>
+    </oj-sp-foldout-panel-summarizing>
+    <oj-sp-foldout-panel-summarizing panel-title="[[ $variables.panelFifthTitle ]]">
+      <div slot="summary">
+        <oj-bind-if test="[[ ($variables.candidateEmployeeNbr4) !== undefined ]]">
+          <oj-form-layout readonly="true" columns="3" max-columns="3" label-edge="top" label-width="20%"
+            direction="row" class="oj-formlayout-full-width" colspan-wrap="wrap" user-assistance-density="compact">
+            <oj-button label="[[ $variables.selectButtonLabel4 ]]" chroming="solid" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction4]]"></oj-button>
+            <oj-input-text value="[[ $variables.candidatesForSuccessors7.jobName ]]" readonly="true"
+              label-hint="Job Name"></oj-input-text>
+            <oj-input-text value="[[ $variables.candidatesForSuccessors7.photo ]]" readonly="true"
+              label-hint="Photo"></oj-input-text>
+          </oj-form-layout>
+        </oj-bind-if>
+      </div>
+      <oj-bind-if test="[[ ($variables.candidateEmployeeNbr4) !== undefined ]]">
+        <oj-form-layout readonly="true" label-edge="start" label-width="40" class="oj-formlayout-full-width"
+          colspan-wrap="wrap" user-assistance-density="compact">
+          <oj-input-text value="[[ $variables.candidatesForSuccessors9.employeeFullName ]]" readonly="true"
+            label-hint="Name:"
+            class="oj-form-control-text-align-right oj-form-control-text-align-start oj-form-control-full-width oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+          <oj-input-number value="[[ $variables.candidatesForSuccessors9.eMPLOYEENUMBER ]]" readonly="true"
+            label-hint="Employee Nbr:" converter='{"options":{"useGrouping":false},"type":"number"}'
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-number>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors9.pLATFORMNAME ]]" readonly="true"
+            label-hint="Platform: "
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-max-width-sm oj-form-control-width-sm"></oj-input-text>
+          <oj-input-number value="[[ $variables.candidatesForSuccessors9.rATING ]]" readonly="true" label-hint="Rating:"
+            converter='{"options":{"useGrouping":false},"type":"number"}'
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-number>
+          <oj-input-date-time value="[[ $variables.candidatesForSuccessors9.dateOfJoining ]]" readonly="true"
+            label-hint="Date of Joining:" converter='{"type": "datetime", "options": {"pattern":"dd/MM/yyyy"}}'
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-date-time>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors9.gradeName ]]" readonly="true" label-hint="Grade:"
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors9.eMPLOYMENTTYPE ]]" readonly="true"
+            label-hint="Emplyeement type:"
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors9.bUSINESSIMPACT ]]" readonly="true"
+            label-hint="BUSINESS_IMPACT"></oj-input-text>
+          <oj-input-text value="[[ $variables.candidatesForSuccessors9.sUPERVISORNAME ]]" readonly="true"
+            label-hint="Supervisor: "
+            class="oj-form-control-text-align-right oj-form-control-full-width oj-form-control-text-align-start oj-form-control-width-sm oj-form-control-max-width-sm"></oj-input-text>
+        </oj-form-layout>
+      </oj-bind-if>
+    </oj-sp-foldout-panel-summarizing>
+    <oj-sp-horizontal-overview slot="overview" id="foldout_layout_h_overview"
+      display-mode="[[ $variables.displayMode ]]" item-title="[[ $variables.jobDefinition2.uniqueJOBTITLE ]]"
+      display-options.show-details="disabled">
+      <oj-button label="Setup Succession Plan" slot="contextualInfo" chroming="solid"
+        on-oj-action="[[$listeners.buttonAction5]]">
+        <span class="oj-ux-ico-invoice-create" slot="startIcon" on-click="[[$listeners.iconClick]]"></span>
+      </oj-button>
+    </oj-sp-horizontal-overview>
+  </oj-sp-foldout-layout>
+</div>

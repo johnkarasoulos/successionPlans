@@ -1,0 +1,162 @@
+{
+    "displayLabel": "EmployeePerformance",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "b0501acd-876d-48bc-afef-3dd05983bda2",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "ef294439-d3d0-4068-a800-166e126e76c6",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "d0362056-69b0-4aa5-a5ba-bba98e62870e",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "afbd5ffc-4c52-4783-971a-8561f10249d2",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "f1457a4f-5207-4f27-a7e4-b8e9d42e5052",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "6e7550ea-6431-4f3f-9b79-4ca788fd9176",
+            "type": "number"
+        },
+        {
+            "displayLabel": "EMPLOYEE_NUMBER",
+            "name": "eMPLOYEENUMBER",
+            "oid": "a805a3c8-15b8-41f8-8d05-f19f20158d39",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "eMPLOYEENAME",
+            "name": "eMPLOYEENAME",
+            "oid": "9347fd5f-65c7-4536-8b3a-c77d6170805e",
+            "type": "string"
+        },
+        {
+            "displayLabel": "pLANNAME",
+            "name": "pLANNAME",
+            "oid": "44b1b264-7ea3-4a50-996e-42ba70264689",
+            "type": "string"
+        },
+        {
+            "displayLabel": "rATING",
+            "name": "rATING",
+            "oid": "850be0dd-c411-4e42-93d9-0c431c2556fd",
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "fINALSTATUS",
+            "name": "fINALSTATUS",
+            "oid": "31147081-362d-4ff2-901f-d6cfb867fac8",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "dOCUMENTNAME",
+            "name": "dOCUMENTNAME",
+            "oid": "2c677082-66e5-44f3-b324-712bb7463061",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "mGRFINALOUTCOME",
+            "name": "mGRFINALOUTCOME",
+            "oid": "ddfc42f5-5813-4efc-9552-75139b71ce25",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "oUTCOMETYPE",
+            "name": "oUTCOMETYPE",
+            "oid": "6db23858-d7fd-4b93-a85d-069871002a41",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "tARGETYEAR",
+            "name": "tARGETYEAR",
+            "oid": "15ebd12d-3a17-4bdd-a7e4-7b19b8e34376",
+            "scale": 1,
+            "type": "number"
+        }
+    ],
+    "hidden": false,
+    "name": "EmployeePerformance",
+    "oid": "d4ea1653-3cdf-4b94-895e-902f03c274b7",
+    "relationships": [
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

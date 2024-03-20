@@ -1,0 +1,12 @@
+{
+    "vbcs.dt.version": "20231205-24.04.1",
+    "dependencies": {
+        "upgrade": "none",
+        "paths": {
+            "jet": "https://static.oracle.com/cdn/jet/15.1.5",
+            "telemetry": "https://static.oracle.com/cdn/trace/7.4.0",
+            "visualRuntime": "https://static.oracle.com/cdn/vb/2404.0.0"
+        }
+    },
+    "source.version": "2310"
+}

@@ -1,0 +1,561 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "backgroundColor": {
+      "type": "string",
+      "defaultValue": "dark-ocean"
+    },
+    "candidates": {
+      "type": "postSPCREATEPLAN1Request[]",
+      "uniqueItems": true
+    },
+    "createSPPKGSPCREATEPLAN010000ChainInProgress": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    },
+    "IncumbentFullName": {
+      "type": "string",
+      "@dt": {
+        "label": "Incumbent Full Name:"
+      }
+    },
+    "IncumbentPersonNumber": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "oj_table_161703574_1SelectedId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "OwnerTypeCode": {
+      "type": "string",
+      "defaultValue": "Administrator"
+    },
+    "personalInfoListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Personal_info",
+        "keyAttributes": "eMPNAME",
+        "itemsPath": "items",
+        "responseType": "getallPersonalInfoResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "eMPNAME"
+          ]
+        },
+        "filterCriterion": {
+          "op": "$pr",
+          "attribute": "eMPNAME",
+          "value": ""
+        }
+      }
+    },
+    "personalInfoListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Personal_info",
+        "keyAttributes": "eMPNAME",
+        "itemsPath": "items",
+        "responseType": "getallPersonalInfoResponse2",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "eMPNAME"
+          ]
+        },
+        "filterCriterion": {
+          "op": "$and",
+          "criteria": [
+            {
+              "op": "$co",
+              "attribute": "eMPLOYEENUMBER",
+              "value": "{{ $variables.IncumbentPersonNumber }}"
+            },
+            {
+              "op": "$pr",
+              "attribute": "eMPNAME",
+              "value": ""
+            }
+          ]
+        }
+      }
+    },
+    "personalInfoListSDP3": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Personal_info",
+        "keyAttributes": "eMPLOYEENUMBER",
+        "itemsPath": "items",
+        "responseType": "getallPersonalInfoResponse3",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "eMPNAME"
+          ]
+        },
+        "filterCriterion": {
+          "op": "$pr",
+          "attribute": "eMPNAME",
+          "value": ""
+        },
+        "pagingCriteria": {
+          "size": 50
+        }
+      }
+    },
+    "PlanCandidatePerson1": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "PlanCandidatePerson2": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "PlanCandidatePerson3": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "PlanCandidatePerson4": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "PlanCandidatePersonNumber1": {
+      "type": "any",
+      "input": "fromUrl"
+    },
+    "PlanCandidatePersonNumber2": {
+      "type": "string"
+    },
+    "PlanCandidatePersonNumber3": {
+      "type": "string"
+    },
+    "PlanCandidatePersonNumber4": {
+      "type": "string"
+    },
+    "PlanName": {
+      "type": "string"
+    },
+    "planOwnerNumber": {
+      "type": "any"
+    },
+    "PlanOwnerPersonNumber": {
+      "type": "string"
+    },
+    "readinessLookup": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_SuccessionPlanning",
+        "responseType": "getall_SuccessionPlanning",
+        "itemsPath": "items",
+        "keyAttributes": "sUCCESSORREADINESSLEVEL",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "sUCCESSORREADINESSLEVEL"
+          ]
+        }
+      }
+    },
+    "readinessStatusListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_ReadinessStatus",
+        "keyAttributes": "status",
+        "itemsPath": "items",
+        "responseType": "getallReadinessStatusResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "status"
+          ]
+        }
+      }
+    },
+    "readinessStatusListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_ReadinessStatus",
+        "keyAttributes": "status",
+        "itemsPath": "items",
+        "responseType": "getallReadinessStatusResponse2",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "status"
+          ]
+        }
+      }
+    },
+    "sPPKGSPCREATEPLAN010000": {
+      "type": "postSPCREATEPLAN1Request"
+    },
+    "successionPlanningListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_SuccessionPlanning",
+        "keyAttributes": "sUCCESSORID",
+        "itemsPath": "items",
+        "responseType": "getallSuccessionPlanningResponse2"
+      }
+    },
+    "SuccessioPlan": {
+      "type": "createPlan"
+    },
+    "workersInfo2ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_WorkersInfo2",
+        "keyAttributes": [
+          "eMPLOYEEID",
+          "eMPNAME",
+          "readinessLevel"
+        ],
+        "itemsPath": "items",
+        "responseType": "getallWorkersInfo2Response",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "eMPLOYEEID",
+            "eMPNAME",
+            "readinessLevel"
+          ]
+        },
+        "filterCriterion": {
+          "op": "$or",
+          "criteria": [
+            {
+              "op": "$eq",
+              "attribute": "eMPLOYEEID",
+              "value": "{{ $variables.PlanCandidatePerson1 }}"
+            },
+            {
+              "op": "$eq",
+              "attribute": "eMPLOYEEID",
+              "value": "{{ $variables.PlanCandidatePerson2 }}"
+            },
+            {
+              "op": "$eq",
+              "attribute": "eMPLOYEEID",
+              "value": "{{ $variables.PlanCandidatePerson3 }}"
+            },
+            {
+              "op": "$eq",
+              "attribute": "eMPLOYEEID",
+              "value": "{{ $variables.PlanCandidatePerson4 }}"
+            }
+          ]
+        }
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.createPlan": {
+      "endpoint": "postSP_CREATEPLAN1_0",
+      "service": "createSuccessorPlan",
+      "path": "request"
+    },
+    "@decorators.getall_SuccessionPlanning": {
+      "endpoint": "getall_SuccessionPlanning",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallPersonalInfoResponse": {
+      "endpoint": "getall_Personal_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallPersonalInfoResponse2": {
+      "endpoint": "getall_Personal_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallPersonalInfoResponse3": {
+      "endpoint": "getall_Personal_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallReadinessStatusResponse": {
+      "endpoint": "getall_ReadinessStatus",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallReadinessStatusResponse2": {
+      "endpoint": "getall_ReadinessStatus",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallSuccessionPlanningResponse": {
+      "endpoint": "getall_SuccessionPlanning",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallSuccessionPlanningResponse2": {
+      "endpoint": "getall_SuccessionPlanning",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallWorkersInfo2Response": {
+      "endpoint": "getall_WorkersInfo2",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.postSPCREATEPLAN1Request": {
+      "endpoint": "postSP_CREATEPLAN1_0",
+      "service": "createSuccessorPlan",
+      "path": "request"
+    },
+    "createPlan": {
+      "IncumbentPersonNumber": "string",
+      "OwnerTypeCode": "string",
+      "planName": "string",
+      "PlanOwnerPersonNumber": "string",
+      "successors": [
+        {
+          "CandidateReadiness": "string",
+          "PlanCandidatePersonNumber": "string"
+        }
+      ]
+    },
+    "getall_SuccessionPlanning": {
+      "items": [
+        {
+          "sUCCESSORREADINESSLEVEL": "string"
+        }
+      ]
+    },
+    "getallPersonalInfoResponse": {
+      "items": [
+        {
+          "eMPNAME": "string"
+        }
+      ]
+    },
+    "getallPersonalInfoResponse2": {
+      "items": [
+        {
+          "eMPLOYEENUMBER": "number",
+          "eMPNAME": "string"
+        }
+      ]
+    },
+    "getallPersonalInfoResponse3": {
+      "items": [
+        {
+          "eMPLOYEENUMBER": "number",
+          "eMPNAME": "string"
+        }
+      ]
+    },
+    "getallReadinessStatusResponse": {
+      "items": [
+        {
+          "status": "string"
+        }
+      ]
+    },
+    "getallReadinessStatusResponse2": {
+      "items": [
+        {
+          "status": "string"
+        }
+      ]
+    },
+    "getallSuccessionPlanningResponse": {
+      "items": [
+        {
+          "sUCCESSORREADINESSLEVEL": "string"
+        }
+      ]
+    },
+    "getallSuccessionPlanningResponse2": {
+      "items": [
+        {
+          "sUCCESSORID": "number",
+          "sUCCESSORNAME": "string",
+          "sUCCESSORREADINESSLEVEL": "string"
+        }
+      ]
+    },
+    "getallWorkersInfo2Response": {
+      "items": [
+        {
+          "eMPLOYEEID": "number",
+          "eMPNAME": "string",
+          "readinessLevel": "string"
+        }
+      ]
+    },
+    "postSPCREATEPLAN1Request": {
+      "IncumbentPersonNumber": "string",
+      "OwnerTypeCode": "string",
+      "planName": "string",
+      "PlanOwnerPersonNumber": "string",
+      "successors": [
+          {
+            "PlanCandidatePersonNumber": "string",
+            "ReadinessLevel": "string"
+          }
+        ]
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1"
+        }
+      ]
+    },
+    "createSuccessionPlanningButtonClicked": {
+      "chains": [
+        {
+          "chain": "navigateToCreateSuccessionPlanningChain"
+        }
+      ]
+    },
+    "editSuccessionPlanningButtonClicked": {
+      "chains": [
+        {
+          "chain": "navigateToEditSuccessionPlanningChain",
+          "parameters": {
+            "successionPlanningId": "[[ $variables.oj_table_161703574_1SelectedId ]]"
+          }
+        }
+      ]
+    },
+    "oj_table_161703574_1SelectionChanged": {
+      "chains": [
+        {
+          "chain": "ojTable1617035741ChangeSelectionChain",
+          "parameters": {
+            "successionPlanningId": "[[ $event.detail.value.key || '' ]]"
+          }
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chain": "createSPPKGSPCREATEPLAN010000Chain"
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "selectValueItem2": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain3",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "tableFirstSelectedRow": {
+      "chains": [
+        {
+          "chain": "TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}"
+          }
+        }
+      ]
+    },
+    "tableSelected": {
+      "chains": [
+        {
+          "chain": "TableSelectedChangeChain",
+          "parameters": {
+            "keys": "{{ $event.detail.value.row.values ? Array.from($event.detail.value.row.values()) : [] }}",
+            "selected": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "PageVbEnterChain"
+        }
+      ]
+    },
+    "ojSpWp1SpPrimaryAction2": {
+      "chains": [
+        {
+          "chain": "WelcomePageTemplateSpPrimaryActionChain"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-collection-container": {
+        "path": "oj-sp/collection-container/loader"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-74-icoWelcomePageTemplate48Svg"
+  }
+}

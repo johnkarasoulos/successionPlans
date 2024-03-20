@@ -1,0 +1,113 @@
+{
+    "displayLabel": "JobDefinition",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "name": "id",
+            "oid": "da3179db-597c-4f5f-ab40-aa28f983d950",
+            "type": "number"
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "189eea56-d751-4638-beb4-a9fa820cd823",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "749194c6-7ad6-4bbd-a61d-6f5e0b140e0f",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "31524c03-fea9-44c5-903e-efd9806da5eb",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "a587ed0d-14be-4be0-8184-41f8b76e28e6",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "4a8ec6c2-d0b8-4b3f-9b99-a1f002d10400",
+            "type": "number"
+        },
+        {
+            "displayLabel": "UniqueJobID",
+            "internal": true,
+            "key": true,
+            "name": "uniqueJobID",
+            "oid": "2f46b4c4-0176-423f-8289-778f2cc37537",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Unique_JOB_TITLE",
+            "name": "uniqueJOBTITLE",
+            "oid": "966cf91a-f61d-4e31-9716-3135d6fa7db3",
+            "type": "string"
+        },
+        {
+            "displayLabel": "FUNCTIONAL_TITLE",
+            "name": "fUNCTIONALTITLE",
+            "oid": "b0bf3aa6-617f-4ee0-bbc5-edc470569b1c",
+            "type": "string"
+        },
+        {
+            "displayLabel": "JOB_CODE",
+            "name": "jOBCODE",
+            "oid": "df484bee-d92b-408d-8315-92aa9a74c803",
+            "type": "string"
+        },
+        {
+            "displayLabel": "REPORTINGTO",
+            "name": "rEPORTINGTO",
+            "oid": "b15fc9e6-10fa-45f5-a20f-1288c3eb25d4",
+            "type": "string"
+        },
+        {
+            "displayLabel": "GRADE",
+            "name": "gRADE",
+            "oid": "82149bab-b03d-49e8-8700-6972a6fe18bc",
+            "type": "string"
+        },
+        {
+            "displayLabel": "PLATFORM",
+            "name": "pLATFORM",
+            "oid": "84abbc72-1592-4847-8347-350ddd96494c",
+            "type": "string"
+        },
+        {
+            "displayLabel": "UNIT",
+            "name": "uNIT",
+            "oid": "4b620611-2625-46e4-bd88-f528a69d58db",
+            "type": "string"
+        },
+        {
+            "displayLabel": "DEPARTMENT",
+            "name": "dEPARTMENT",
+            "oid": "62d51203-7d83-447a-8f8a-1c477c28eb35",
+            "type": "string"
+        },
+        {
+            "displayLabel": "JOBPURPOSE",
+            "name": "jOBPURPOSE",
+            "oid": "f63acc60-ce2b-41d6-ba84-fa952acaf4f4",
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "JobDefinition",
+    "oid": "ddf7b265-f9f2-4489-b7fd-8c1cf7e9e0e3"
+}

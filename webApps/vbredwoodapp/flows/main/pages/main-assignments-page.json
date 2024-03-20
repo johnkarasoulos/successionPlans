@@ -1,0 +1,1181 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "assignementsInfo": {
+      "type": "getAssignementsInfoResponse"
+    },
+    "assignementsInfoListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Assignements_info",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallAssignementsInfoResponse",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "jobName",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "assignementsInfoListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Assignements_info",
+        "keyAttributes": [
+            "id",
+            "EMPLOYEENUMBER"
+          ],
+        "itemsPath": "items",
+        "responseType": "getallAssignementsInfoResponse4",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "jobName",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "assignementsInfoListSDP3": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Assignements_info",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallAssignementsInfoResponse5",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "jobName",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "assignments": {
+      "type": "updateAssignmentsRequest"
+    },
+    "assignmentsEditFormStatus": {
+      "type": "string",
+      "defaultValue": "pending"
+    },
+    "assignmentsETag": {
+      "type": "string"
+    },
+    "assignmentsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Assignments",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallAssignmentsResponse",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "jobName",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "assignmentsListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Assignments",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallAssignmentsResponse2",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "employeeInfoListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EmployeeInfo",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeInfoResponse",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "assignments2Object.jobName",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "employeeInfoListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EmployeeInfo",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeInfoResponse2",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "assignments2Object.jobName",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "employeeInfoListSDP3": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EmployeeInfo",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeInfoResponse3",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "assignments2Object.jobName",
+          "value": "{{ $variables.searchJob }}"
+        }
+      }
+    },
+    "employeeInfoListSDP4": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EmployeeInfo",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeInfoResponse4"
+      }
+    },
+    "fetchedAssignments": {
+      "type": "getAssignmentsResponse"
+    },
+    "fullEmployeeInfoListSDP": {
+      "type": "getall_EmployeeInfo"
+    },
+    "IncumbentPersonNumber": {
+      "type": "any"
+    },
+    "job4Critical": {
+      "type": "any",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "loadAssignmentsChain",
+            "parameters": {
+              "assignmentsId": "{{ $variables.job4Critical }}"
+            }
+          }
+        ]
+      }
+    },
+    "Job4SuccessionPlan": {
+      "type": "string"
+    },
+    "listAssignments": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/get_Assignements_info",
+        "responseType": "get_Assignements_new",
+        "itemsPath": "employeeInfoObject-_-items"
+      }
+    },
+    "opendrawer": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "personalInfoListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Personal_info",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallPersonalInfoResponse"
+      }
+    },
+    "rowSelected": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "searchJob": {
+      "type": "string",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "loadAssignementsInfoChain",
+            "parameters": {
+              "assignementsInfoId": "{{ $variables.searchJob }}"
+            }
+          }
+        ]
+      }
+    },
+    "setCritical": {
+      "type": "get_Assignments",
+      "defaultValue": {
+        "critical": false
+      }
+    },
+    "successionYear": {
+      "type": "number",
+      "defaultValue": 2019
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.get_Assignements_info": {
+      "endpoint": "get_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.get_Assignements_new": {
+      "endpoint": "get_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.get_Assignments": {
+      "endpoint": "get_Assignments",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getall_EmployeeInfo": {
+      "endpoint": "getall_EmployeeInfo",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignementsInfoJobDescriptionObjectResponse": {
+      "endpoint": "getall_Assignements_info-jobDescriptionObject",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignementsInfoResponse": {
+      "endpoint": "getall_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignementsInfoResponse2": {
+      "endpoint": "getall_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignementsInfoResponse3": {
+      "endpoint": "getall_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignementsInfoResponse4": {
+      "endpoint": "getall_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignementsInfoResponse5": {
+      "endpoint": "getall_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignmentsResponse": {
+      "endpoint": "getall_Assignments",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAssignmentsResponse2": {
+      "endpoint": "getall_Assignments",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallEmployeeInfoResponse": {
+      "endpoint": "getall_EmployeeInfo",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallEmployeeInfoResponse2": {
+      "endpoint": "getall_EmployeeInfo",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallEmployeeInfoResponse3": {
+      "endpoint": "getall_EmployeeInfo",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallEmployeeInfoResponse4": {
+      "endpoint": "getall_EmployeeInfo",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallPersonalInfoResponse": {
+      "endpoint": "getall_Personal_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getAssignementsInfoResponse": {
+      "endpoint": "get_Assignements_info",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getAssignmentsResponse": {
+      "endpoint": "get_Assignments",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.updateAssignmentsRequest": {
+      "endpoint": "update_Assignments",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "get_Assignements_info": {
+      "employeeFullName": "string",
+      "employeeInfoObject": {
+        "items": [
+          {
+            "eMPLOYEENUMBER": "number",
+            "gender": "string",
+            "nationality": "string",
+            "uAENonUAE": "string"
+          }
+        ]
+      },
+      "jobID": "number",
+      "jobName": "string"
+    },
+    "get_Assignements_new": {
+      "employeeFullName": "string",
+      "employeeInfoObject": {
+        "items": [
+          {
+            "eMPLOYEENUMBER": "number",
+            "gender": "string",
+            "nationality": "string",
+            "uAENonUAE": "string"
+          }
+        ]
+      },
+      "jobName": "string"
+    },
+    "get_Assignments": {
+      "BUSINESSUNIT": "string",
+      "critical": "boolean",
+      "criticalJustification": "string",
+      "DEPARTMENT": "string",
+      "id": "number",
+      "JobID": "number",
+      "JobName": "string",
+      "PLANNAME": "string",
+      "PLATFORMNAME": "string"
+    },
+    "getall_EmployeeInfo": {
+      
+        
+          "assignments": "string",
+          "assignments2": "number",
+          "assignments2Object": {
+            "items": [
+              {
+                "bUSINESSUNIT": "string",
+                "dEPARTMENT": "string",
+                "effectiveEndDate": "string",
+                "effectiveStartDate": "string",
+                "employeeFullName": "string",
+                "eMPLOYMENTTYPE": "string",
+                "gradeName": "string",
+                "jobID": "number",
+                "jobName": "string",
+                "lOCATIONNAME": "string",
+                "pLATFORMNAME": "string",
+                "sUPERVISOREMPNO": "number",
+                "sUPERVISORNAME": "string"
+              }
+            ]
+          },
+          "dateOfBirth": "string",
+          "dateOfJoining": "string",
+          "eMAILADDR": "string",
+          "employeeCompetencies": "string",
+          "employeeCompetencies2Object": {
+            "items": [
+              {
+                "aSSETID": "number",
+                "aSSETNAME": "string",
+                "cOMPETENCYID": "number",
+                "cOMPETENCYNAME": "string",
+                "cOMPETENCYTYPE": "string",
+                "eMPLOYEEFULLNAME": "string",
+                "eMPLOYEENUMBER": "number",
+                "mAPPEDPROFICIENCYLEVEL": "string",
+                "tARGETPROFICIENCYLEVEL": "string"
+              }
+            ]
+          },
+          "eMPLOYEENUMBER": "number",
+          "employeePerformance": "string",
+          "employeePerformance2Object": {
+            "items": [
+              {
+                "dOCUMENTNAME": "string",
+                "fINALSTATUS": "string",
+                "mGRFINALOUTCOME": "string",
+                "oUTCOMETYPE": "string",
+                "pLANNAME": "string",
+                "rATING": "number",
+                "tARGETYEAR": "number"
+              }
+            ]
+          },
+          "employeeQualification": "string",
+          "employeeQualification2": "number",
+          "employeeQualification2Object": {
+            "items": [
+              {
+                "cOUNTRY": "string",
+                "eQUALIZED": "string",
+                "tITLE": "string",
+                "tITLESTD": "string",
+                "uNIVERSITY": "string"
+              }
+            ]
+          },
+          "employeeTrainingObject": {
+            "items": [
+              {
+                "cOURSENAME": "string",
+                "eNDDATE": "string",
+                "fULLNAME": "string",
+                "tRAININGHOURS": "number",
+                "tRAININGTYPE": "string"
+              }
+            ]
+          },
+          "eMPNAME": "string",
+          "empTrainingInfo": "string",
+          "gender": "string",
+          "lOCATIONNAME": "string",
+          "mentorMentee": "string",
+          "mentorMentee2": "string",
+          "mentorMentee3Object": {
+            "items": [
+              {
+                "mENTEEEMPLOYEENUMBER": "number",
+                "mENTEENAME": "string",
+                "mENTEEPERSONID": "number",
+                "mENTEEPROGRESS": "number",
+                "mENTOREMPLOYEENUMBER": "number",
+                "mENTORNAME": "string",
+                "mENTORPERSONID": "number",
+                "mONTH": "string",
+                "pROGRAMID": "number",
+                "pROGRAMNAME": "string",
+                "yEAR": "number"
+              }
+            ]
+          },
+          "mobility": "string",
+          "mobility2Object": {
+            "items": [
+              {
+                "aSSIGNMENTTYPE": "string",
+                "eNDDATE": "string",
+                "fULLNAME": "string",
+                "hOSTCOMPANY": "string",
+                "hOSTCOMPANYINOUTGROUP": "string",
+                "pERSONID": "number",
+                "sTARTDATE": "string"
+              }
+            ]
+          },
+          "nationality": "string",
+          "photo": "string",
+          "prevEmployeement": "string",
+          "prevEmployeement2Object": {
+            "items": [
+              {
+                "cOMPANY": "string",
+                "eMPLOYMENTROLE": "string",
+                "eNDDATE": "string",
+                "sTARTDATE": "string"
+              }
+            ]
+          },
+          "talentMapping": "string",
+          "talentMapping2Object": {
+            "items": [
+              {
+                "bUSINESSIMPACT": "string",
+                "cRITICALTORETAIN": "string",
+                "fLIGHTRISKS": "string",
+                "pROMOTIONELIGIBILITY": "string",
+                "rEASONFORFLIGHTRISK": "string",
+                "rETENTIONCONSIDERATIONS": "string",
+                "tALENTMAPPOSITION": "string",
+                "yEAR": "number"
+              }
+            ]
+          },
+          "uAENonUAE": "string"
+        
+      
+    },
+    "getallAssignementsInfoJobDescriptionObjectResponse": {
+      "items": [
+        {
+          "assignementsInfoObject": {
+            "items": [
+              {
+                "employeeFullName": "string",
+                "personalInfoObject": {
+                  "items": [
+                    {
+                      "nationality": "string",
+                      "uAENonUAE": "string"
+                    }
+                  ]
+                }
+              }
+            ],
+            "links": [
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "jOBID": "string",
+          "jOBTITLE": "string"
+        }
+      ]
+    },
+    "getallAssignementsInfoResponse": {
+      "items": [
+        {
+          "employeeInfoObject": {
+            "items": [
+              {
+                "eMPNAME": "string",
+                "nationality": "string",
+                "uAENonUAE": "string"
+              }
+            ]
+          },
+          "id": "number",
+          "jobName": "string"
+        }
+      ]
+    },
+    "getallAssignementsInfoResponse2": {
+      "items": [
+        {
+          "id": "number",
+          "jobDescriptionObject": {
+            "items": [
+              {
+                "jOBCODE": "string",
+                "jOBTITLE": "string"
+              }
+            ]
+          },
+          "jobName": "string",
+          "lOCATIONNAME": "string",
+          "personalInfoObject": {
+            "items": [
+              {
+                "eMPLOYEENUMBER": "number",
+                "eMPNAME": "string",
+                "nationality": "string",
+                "uAENonUAE": "string"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getallAssignementsInfoResponse3": {
+      "items": [
+        {
+          "employeeFullName": "string",
+          "eMPLOYEENUMBER": "number",
+          "jobID": "number",
+          "linkToJobsObject": {
+            "items": [
+              {
+                "dEPARTMENT": "string",
+                "gRADE": "string",
+                "jOBID": "string",
+                "jOBPURPOSE": "string",
+                "jOBTITLE": "string"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "getallAssignementsInfoResponse4": {
+      "items": [
+        {
+          "employeeFullName": "string",
+          "EMPLOYEENUMBER": "number",
+          "id": "number",
+          "jobName": "string",
+          "linkToJobsObject": {
+            "items": [
+              {
+                "dEPARTMENT": "string",
+                "eXPERIENCE": "string",
+                "fUNCTIONALTITLE": "string",
+                "jOBCODE": "string",
+                "jOBID": "string"
+              }
+            ]
+          }
+
+        }
+      ]
+    },
+    "getallAssignementsInfoResponse5": {
+      "items": [
+        {
+          "connectedEmployeeId": "number",
+          "connectedEmployeeIdObject": {
+            "items": [
+              {
+                "eMPNAME": "string",
+                "gender": "string",
+                "uAENonUAE": "string"
+              }
+            ]
+          },
+          "eMPLOYMENTTYPE": "string",
+          "gradeName": "string",
+          "id": "number",
+          "jobName": "string"
+        }
+      ]
+    },
+    "getallAssignmentsResponse": {
+      "items": [
+        {
+          "bUSINESSUNIT": "string",
+          "dEPARTMENT": "string",
+          "employeeFullName": "string",
+          "eMPNUMBERObject": {
+            "items": [
+              {
+                "gender": "string",
+                "nationality": "string",
+                "photo": "string",
+                "uAENonUAE": "string"
+              }
+            ]
+          },
+          "id": "number"
+        }
+      ]
+    },
+    "getallAssignmentsResponse2": {
+      "items": [
+        {
+          "ASSETNAME": "string",
+          "BUSINESSUNIT": "string",
+          "COMPETENCYNAME": "string",
+          "COMPETENCYTYPE": "string",
+          "COUNTRY": "string",
+          "COURSENAME": "string",
+          "DateOfBirth": "string",
+          "DateOfJoining": "string",
+          "DEPARTMENT": "string",
+          "DOCUMENTNAME": "string",
+          "EffectiveEndDate": "string",
+          "EffectiveStartDate": "string",
+          "EMAILADDR": "string",
+          "EmployeeFullName": "string",
+          "EMPLOYMENTTYPE": "string",
+          "ENDDATE": "string",
+          "EQUALIZED": "string",
+          "FINALSTATUS": "string",
+          "Gender": "string",
+          "GradeName": "string",
+          "id": "number",
+          "JobName": "string",
+          "LOCATIONNAME": "string",
+          "LOCATIONNAME2": "string",
+          "MAPPEDPROFICIENCYLEVEL": "string",
+          "MGRFINALOUTCOME": "string",
+          "Nationality": "string",
+          "OUTCOMETYPE": "string",
+          "Photo": "string",
+          "PLANNAME": "string",
+          "PLATFORMNAME": "string",
+          "RATING": "number",
+          "STARTDATE": "string",
+          "SUPERVISORNAME": "string",
+          "TARGETPROFICIENCYLEVEL": "string",
+          "TARGETYEAR": "number",
+          "TITLE": "string",
+          "TITLESTD": "string",
+          "TRAININGHOURS": "number",
+          "TRAININGTYPE": "string",
+          "UAENonUAE": "string",
+          "UNIVERSITY": "string"
+        }
+      ]
+    },
+    "getallEmployeeInfoResponse": {
+      "items": [
+        {
+          "assignments2Object": {
+            "items": [
+              {
+                "bUSINESSUNIT": "string",
+                "dEPARTMENT": "string",
+                "employeeFullName": "string",
+                "eMPLOYMENTTYPE": "string",
+                "gradeName": "string",
+                "jobName": "string",
+                "lOCATIONNAME": "string",
+                "pLATFORMNAME": "string",
+                "sUPERVISORNAME": "string"
+              }
+            ]
+          },
+          "id": "number",
+          "photo": "string",
+          "uAENonUAE": "string"
+        }
+      ]
+    },
+    "getallEmployeeInfoResponse2": {
+      "items": [
+        {
+          "assignments": "string",
+          "assignments2Object": {
+            "count": "number",
+            "hasMore": "boolean",
+            "items": "object[]",
+            "limit": "number",
+            "links": "object[]",
+            "offset": "number",
+            "totalResults": "number"
+          },
+          "creationDate": "string",
+          "dateOfBirth": "string",
+          "dateOfJoining": "string",
+          "eMAILADDR": "string",
+          "employeeCompetencies": "string",
+          "employeeCompetencies2Object": {
+            "count": "number",
+            "hasMore": "boolean",
+            "items": "object[]",
+            "limit": "number",
+            "links": "object[]",
+            "offset": "number",
+            "totalResults": "number"
+          },
+          "eMPLOYEENUMBER": "number",
+          "employeePerformance": "string",
+          "employeePerformance2": "number",
+          "employeePerformance2Object": {
+            "count": "number",
+            "hasMore": "boolean",
+            "items": "object[]",
+            "limit": "number",
+            "links": "object[]",
+            "offset": "number",
+            "totalResults": "number"
+          },
+          "employeeQualification": "string",
+          "employeeQualification2": "number",
+          "employeeQualification2Object": {
+            "count": "number",
+            "hasMore": "boolean",
+            "items": "object[]",
+            "limit": "number",
+            "links": "object[]",
+            "offset": "number",
+            "totalResults": "number"
+          },
+          "employeeTraining": "number",
+          "employeeTrainingObject": {
+            "count": "number",
+            "hasMore": "boolean",
+            "items": "object[]",
+            "limit": "number",
+            "links": "object[]",
+            "offset": "number",
+            "totalResults": "number"
+          },
+          "eMPNAME": "string",
+          "empTrainingInfo": "string",
+          "gender": "string",
+          "id": "number",
+          "lastUpdateDate": "string",
+          "lastUpdatedBy": "string",
+          "lOCATIONNAME": "string",
+          "mentorMentee": "string",
+          "mobility": "string",
+          "nationality": "string",
+          "photo": "string",
+          "prevEmployeement": "string",
+          "talentMapping": "string",
+          "uAENonUAE": "string"
+        }
+      ]
+    },
+    "getallEmployeeInfoResponse3": {
+      "items": [
+        {
+          "assignments": "string",
+          "assignments2Object": {
+            "items": [
+              {
+                "bUSINESSUNIT": "string",
+                "dEPARTMENT": "string",
+                "effectiveEndDate": "string",
+                "effectiveStartDate": "string",
+                "employeeFullName": "string",
+                "eMPLOYEENUMBER": "number",
+                "eMPLOYMENTTYPE": "string",
+                "gradeName": "string",
+                "jobID": "number",
+                "jobName": "string",
+                "lOCATIONNAME": "string",
+                "pLATFORMNAME": "string",
+                "sUPERVISOREMPNO": "number"
+              }
+            ]
+          },
+          "dateOfBirth": "string",
+          "dateOfJoining": "string",
+          "eMAILADDR": "string",
+          "employeeCompetencies": "string",
+          "employeeCompetencies2Object": {
+            "items": [
+              {
+                "aSSETID": "number",
+                "aSSETNAME": "string",
+                "cOMPETENCYID": "number",
+                "cOMPETENCYNAME": "string",
+                "cOMPETENCYTYPE": "string",
+                "eMPLOYEEFULLNAME": "string",
+                "eMPLOYEENUMBER": "number",
+                "mAPPEDPROFICIENCYLEVEL": "string",
+                "tARGETPROFICIENCYLEVEL": "string"
+              }
+            ]
+          },
+          "employeePerformance": "string",
+          "employeePerformance2Object": {
+            "items": [
+              {
+                "dOCUMENTNAME": "string",
+                "fINALSTATUS": "string",
+                "mGRFINALOUTCOME": "string",
+                "oUTCOMETYPE": "string",
+                "pLANNAME": "string",
+                "rATING": "number",
+                "tARGETYEAR": "number"
+              }
+            ]
+          },
+          "employeeQualification2Object": {
+            "items": [
+              {
+                "cOUNTRY": "string",
+                "eMPLOYEENUMBER": "number",
+                "eMPNAME": "string",
+                "eQUALIZED": "string",
+                "tITLE": "string",
+                "tITLESTD": "string",
+                "uNIVERSITY": "string"
+              }
+            ]
+          },
+          "employeeTrainingObject": {
+            "items": [
+              {
+                "cOURSENAME": "string",
+                "eNDDATE": "string",
+                "fULLNAME": "string",
+                "sTARTDATE": "string",
+                "tRAININGHOURS": "number",
+                "tRAININGTYPE": "string"
+              }
+            ]
+          },
+          "empTrainingInfo": "string",
+          "gender": "string",
+          "id": "number",
+          "lOCATIONNAME": "string",
+          "mentorMentee": "string",
+          "mobility": "string",
+          "mobility2Object": {
+            "items": [
+              {
+                "aSSIGNMENTTYPE": "string",
+                "eNDDATE": "string",
+                "fULLNAME": "string",
+                "hOSTCOMPANY": "string",
+                "hOSTCOMPANYINOUTGROUP": "string",
+                "pERSONID": "number",
+                "sTARTDATE": "string"
+              }
+            ]
+          },
+          "nationality": "string",
+          "photo": "string",
+          "prevEmployeement": "string",
+          "prevEmployeement2Object": {
+            "items": [
+              {
+                "cOMPANY": "string",
+                "eMPLOYMENTROLE": "string",
+                "eNDDATE": "string",
+                "sTARTDATE": "string"
+              }
+            ]
+          },
+          "talentMapping": "string",
+          "talentMapping2Object": {
+            "items": [
+              {
+                "bUSINESSIMPACT": "string",
+                "cRITICALTORETAIN": "string",
+                "eMPLOYEENAME": "string",
+                "eMPLOYEENUMBER": "number",
+                "fLIGHTRISKS": "string",
+                "pROMOTIONELIGIBILITY": "string",
+                "rEASONFORFLIGHTRISK": "string",
+                "rETENTIONCONSIDERATIONS": "string",
+                "tALENTMAPPOSITION": "string",
+                "yEAR": "number"
+              }
+            ]
+          },
+          "uAENonUAE": "string"
+        }
+      ]
+    },
+    "getallEmployeeInfoResponse4": {
+      "items": [
+        {
+          "assignments2Object": {
+            "items": [
+              {
+                "bUSINESSUNIT": "string",
+                "dEPARTMENT": "string",
+                "employeeFullName": "string",
+                "eMPLOYEENUMBER": "number",
+                "eMPLOYMENTTYPE": "string",
+                "gradeName": "string",
+                "jobID": "number",
+                "jobName": "string",
+                "lOCATIONNAME": "string",
+                "pLATFORMNAME": "string",
+                "sUPERVISOREMPNO": "number",
+                "sUPERVISORNAME": "string"
+              }
+            ]
+          },
+          "dateOfBirth": "string",
+          "dateOfJoining": "string",
+          "eMAILADDR": "string",
+          "gender": "string",
+          "id": "number",
+          "nationality": "string",
+          "photo": "string",
+          "uAENonUAE": "string"
+        }
+      ]
+    },
+    "getallPersonalInfoResponse": {
+      "items": [
+        {
+          "eMPNAME": "string",
+          "id": "number",
+          "photo": "string",
+          "uAENonUAE": "string"
+        }
+      ]
+    },
+    "getAssignementsInfoResponse": {
+      "employeeInfoObject": {
+        "items": [
+          {
+            "eMPLOYEENUMBER": "number",
+            "eMPNAME": "string",
+            "nationality": "string",
+            "uAENonUAE": "string"
+          }
+        ]
+      },
+      "eMPLOYMENTTYPE": "string",
+      "jobName": "string"
+    },
+    "getAssignmentsResponse": {
+      "BUSINESSUNIT": "string",
+      "critical": "boolean",
+      "criticalJustification": "string",
+      "DEPARTMENT": "string",
+      "EMPLOYMENTTYPE": "string",
+      "id": "number",
+      "JobID": "number",
+      "JobName": "string",
+      "PLATFORMNAME": "string"
+    },
+    "updateAssignmentsRequest": {
+      "BUSINESSUNIT": "string",
+      "critical": "boolean",
+      "criticalJustification": "string",
+      "DEPARTMENT": "string",
+      "EMPLOYMENTTYPE": "string",
+      "id": "number",
+      "JobID": "number",
+      "JobName": "string",
+      "PLATFORMNAME": "string"
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "key": "{{ $current.data.id }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2"
+        }
+      ]
+    },
+    "checkboxSetValue": {
+      "chains": [
+        {
+          "chain": "CheckboxSetValueChangeChain",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "listViewFirstSelectedItem": {
+      "chains": [
+        {
+          "chain": "ListViewFirstSelectedItemChangeChain",
+          "parameters": {
+
+            "rowData": "{{$event.detail.value.data}}",
+            "rowKey": "{{$event.detail.value.key}}",
+            "Incumbent": "{{$event.detail.value.data.employeenumber}}",
+            "incumbentNbr": "{{$event.detail.value.data.employeenumber}}"
+          }
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chain": "saveAssignmentsChain",
+          "parameters": {
+            "assignmentsId": "{{ $variables.job4Critical }}"
+          }
+        }
+      ]
+    },
+    "smartSearchPageTemplateSpPrimaryAction": {
+      "chains": [
+        {
+          "chain": "goToSuccessorsSelection",
+          "parameters": {
+            "rowKey": "[[ $variables.Job4SuccessionPlan ]]",
+            "rowData": "[[ $event.detail ]]",
+            "jobIncumbentPersonNumber": "[[ $variables.IncumbentPersonNumber ]]"
+          }
+        }
+      ]
+    },
+    "smartSearchPageTemplateSpSecondaryAction": {
+      "chains": [
+        {
+          "chain": "SmartSearchPageTemplateSpSecondaryActionChain",
+          "parameters": {
+            "actionId": "{{ $event.detail.secondaryItem }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+{
+          "chain": "loadAssignementsInfoChain",
+          "parameters": {
+            "assignementsInfoId": "{{ $variables.searchJob }}"
+          }
+        },
+        {
+          "chain": "loadAssignmentsChain",
+          "parameters": {
+            "assignmentsId": "{{ $variables.job4Critical }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-drawer-popup": {
+        "path": "ojs/ojdrawerpopup"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-sp-input-rich-text-2": {
+        "path": "oj-sp/input-rich-text-2/loader"
+      },
+      "oj-sp-profile-card": {
+        "path": "oj-sp/profile-card/loader"
+      },
+      "oj-sp-smart-search-page": {
+        "path": "oj-sp/smart-search-page/loader"
+      },
+      "oj-switch": {
+        "path": "ojs/ojswitch"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-61-icoSmartSearchPage48Svg"
+  }
+}

@@ -1,0 +1,147 @@
+{
+    "displayLabel": "SuccessionPlanning",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "2d12c724-625f-473a-b5d8-845aa6e32c56",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "7f0b0120-0ffe-4b07-94a2-fc1d91eb7df0",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "909a65af-5403-4993-b064-c3955f63f8dc",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "8e48edd9-eaef-4467-b410-6ac9eda44376",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "2f176d33-6aa4-427a-bafa-3c0733a0a351",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "def6766d-c0a8-4898-a838-27bca7540101",
+            "type": "number"
+        },
+        {
+            "displayLabel": "SUCCESSOR_ID",
+            "name": "sUCCESSORID",
+            "oid": "39d2c81a-7cb0-4c71-a8e3-33403a492a96",
+            "required": false,
+            "scale": 1,
+            "type": "number"
+        },
+        {
+            "displayLabel": "SUCCESSOR_NAME",
+            "name": "sUCCESSORNAME",
+            "oid": "a8fe608c-5795-44f0-8b40-63edad694e4a",
+            "type": "string"
+        },
+        {
+            "displayLabel": "SUCCESSOR_ROLE",
+            "name": "sUCCESSORROLE",
+            "oid": "022b830d-5b1c-4083-be33-36331d7fa3dc",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "SUCCESSOR_READINESS_LEVEL",
+            "name": "sUCCESSORREADINESSLEVEL",
+            "oid": "ee95cf1f-c24a-4cea-bec2-32b75db29522",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "INCUMBENT_NAME",
+            "name": "iNCUMBENTNAME",
+            "oid": "e6633860-a864-462f-af09-57a074837917",
+            "type": "string"
+        },
+        {
+            "displayLabel": "DEVELOPMENT_ACTIONS",
+            "name": "dEVELOPMENTACTIONS",
+            "oid": "0ca7db17-6ae4-4d55-ba35-9603e6f69f33",
+            "required": false,
+            "type": "string"
+        },
+        {
+            "displayLabel": "YEAR",
+            "name": "yEAR",
+            "oid": "0659e89b-1adb-4cf0-8a30-70ab74b7868f",
+            "scale": 1,
+            "type": "number"
+        }
+    ],
+    "hidden": false,
+    "name": "SuccessionPlanning",
+    "oid": "da1d9430-c688-4360-a01d-865a9531f14a",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

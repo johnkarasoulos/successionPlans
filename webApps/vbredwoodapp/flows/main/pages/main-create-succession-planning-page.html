@@ -1,0 +1,20 @@
+<div class="oj-flex">
+  <h1 class="oj-flex-item oj-sm-12 oj-md-12">Create SuccessionPlanning</h1>
+</div>
+<div class="oj-flex">
+  <oj-validation-group id="validation-group" class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-form-layout>
+      <oj-input-number value="{{ $variables.successionPlanning.sUCCESSORID }}" label-hint="Person number"></oj-input-number>
+      <oj-input-text value="{{ $variables.successionPlanning.sUCCESSORNAME }}" label-hint="Full name"></oj-input-text>
+      <oj-select-single label-hint="Readiness Level" value="{{ $variables.successionPlanning.sUCCESSORREADINESSLEVEL }}"
+        data="[[$variables.readinessStatusListSDP2]]" item-text="status"></oj-select-single>
+    </oj-form-layout>
+  </oj-validation-group>
+</div>
+<div class="oj-flex">
+  <oj-toolbar chroming="solid" class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-button on-oj-action="[[$listeners.backButtonClicked]]">Cancel</oj-button>
+    <oj-button on-oj-action="[[$listeners.saveButtonClicked]]"
+      disabled="[[ $variables.createSuccessionPlanningChainInProgress ]]">Save</oj-button>
+  </oj-toolbar>
+</div>
